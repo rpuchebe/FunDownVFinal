@@ -9,6 +9,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
@@ -16,7 +17,7 @@ import android.widget.RelativeLayout;
 
 public class Box extends AppCompatActivity implements View.OnTouchListener,View.OnClickListener {
 
-
+    private static final String msg = "LogsAndroid";
     ImageView item1;
     ImageView item2;
     ImageView item3;
@@ -159,7 +160,7 @@ public class Box extends AppCompatActivity implements View.OnTouchListener,View.
 
                 }if(v == item10 ) {
 
-                    Verificar(v, prevX, prevY, firtsX, firtsY, 0, par, "basketshirtw");
+                    Verificar(v, prevX, prevY, firtsX, firtsY, 0, par, "basketshortw");
 
                 }if(v == item11 ) {
 
@@ -198,139 +199,126 @@ public class Box extends AppCompatActivity implements View.OnTouchListener,View.
     private RelativeLayout.LayoutParams Verificar(View v, int prevX, int prevY, int firtsX, int firtsY, int temp1, RelativeLayout.LayoutParams par, String tipo){
 
 
+
+        Log.d(msg,"Item:"+ tipo + "____Top:" + par.topMargin + "____Left :"+ par.leftMargin);
+
         if(tipo == "shirtmen"){
 
-            if (par.topMargin < 500) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.topMargin > 700) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin > 1400) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin < 820) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin < 180) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin > 430) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin < 0) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin > 280) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
-                par.topMargin = 649;
-                par.leftMargin = 1068;}
+                par.topMargin = 320;
+                par.leftMargin = 150;
+
+            }
 
         }
         if(tipo == "shortmen"){
 
-            if (par.topMargin < 870) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.topMargin > 980) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin > 1400) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin < 820) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin < 240) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin > 440) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin < 460) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin > 685) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
-                par.topMargin = 885;
-                par.leftMargin = 1163;}
+                par.topMargin = 360;
+                par.leftMargin = 640;}
         }
         if(tipo == "shoesmen"){
 
-            if (par.topMargin < 1000) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.topMargin > 1300) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin > 1400) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin < 820) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin < 190) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin > 400) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin < 1710) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin > 1850) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
-                par.topMargin = 1093;
-                par.leftMargin = 1140;}
+                par.topMargin = 320;
+                par.leftMargin = 1820;}
         }
-        if(tipo == "basketshirtmen"){
+        if(tipo == "basketshirtm"){
 
-            if (par.topMargin < 500) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.topMargin > 700) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin > 1400) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin < 820) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin < 225) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin > 450) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin < 890) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin > 1090) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
-                par.topMargin = 649;
-                par.leftMargin = 1068;}
+                par.topMargin = 317;
+                par.leftMargin = 1050;}
 
         }
-        if(tipo == "basketshortmen"){
+        if(tipo == "basketshortm"){
 
-            if (par.topMargin < 870) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.topMargin > 980) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin > 1400) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin < 820) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin < 260) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin > 430) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin < 1250) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin > 1500) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
-                par.topMargin = 885;
-                par.leftMargin = 1163;}
+                par.topMargin = 320;
+                par.leftMargin = 1410;}
         }
-        if(tipo == "basketshoesmen"){
+        if(tipo == "shoesw"){
 
-            if (par.topMargin < 1000) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.topMargin > 1300) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin > 1400) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin < 820) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin < 600) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin > 800) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin < 1680) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin > 1880) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
-                par.topMargin = 1093;
-                par.leftMargin = 1140;}
+                par.topMargin = 715;
+                par.leftMargin = 1775;}
         }
         if(tipo == "shirtw"){
 
-            if (par.topMargin < 500) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.topMargin > 700) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin > 1400) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin < 820) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin < 600) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin > 800) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin < 0) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin > 280) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
-                par.topMargin = 649;
-                par.leftMargin = 1068;}
+                par.topMargin = 715;
+                par.leftMargin = 150;}
 
         }
         if(tipo == "shortw"){
 
-            if (par.topMargin < 870) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.topMargin > 980) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin > 1400) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin < 820) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin < 600) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin > 800) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin < 460) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin > 685) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
-                par.topMargin = 885;
-                par.leftMargin = 1163;}
+                par.topMargin = 715;
+                par.leftMargin = 640;}
         }
-        if(tipo == "shoesw"){
 
-            if (par.topMargin < 1000) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.topMargin > 1300) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin > 1400) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin < 820) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if(temp1==0){
-                par.topMargin = 1093;
-                par.leftMargin = 1140;}
-        }
         if(tipo == "basketshirtw"){
 
-            if (par.topMargin < 500) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.topMargin > 700) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin > 1400) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin < 820) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin < 600) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin > 800) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin < 890) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin > 1090) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
-                par.topMargin = 649;
-                par.leftMargin = 1068;}
+                par.topMargin = 715;
+                par.leftMargin = 1050;}
 
         }
         if(tipo == "basketshortw"){
 
-            if (par.topMargin < 870) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.topMargin > 980) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin > 1400) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin < 820) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin < 600) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin > 800) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin < 1250) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin > 1500) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
-                par.topMargin = 885;
-                par.leftMargin = 1163;}
+                par.topMargin = 690;
+                par.leftMargin = 1445;}
         }
-        if(tipo == "basketshoesw"){
 
-            if (par.topMargin < 1000) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.topMargin > 1300) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin > 1400) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin < 820) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if(temp1==0){
-                par.topMargin = 1093;
-                par.leftMargin = 1140;}
-        }
         if(tipo == "ball"){
 
-            if (par.topMargin < 1000) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.topMargin > 1300) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin > 1400) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin < 820) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin < 380) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin > 635) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin < 2020) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin > 2280) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
-                par.topMargin = 1093;
-                par.leftMargin = 1140;}
+                par.topMargin = 500;
+                par.leftMargin = 2160;}
         }
         return par;
     }
