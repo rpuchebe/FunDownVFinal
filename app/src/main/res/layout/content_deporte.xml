@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.raimundoj.fundownfinal.Deporte"
+    tools:showIn="@layout/activity_deporte">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fondo"
+        android:background="@drawable/fondo6"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageButton
+        android:id="@+id/maniqui"
+        android:layout_width="450px"
+        android:layout_height="850px"
+        android:background="@drawable/maniquimw"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp" />
+
+    <ImageButton
+        android:layout_width="500px"
+        android:layout_height="350px"
+        android:id="@+id/box"
+        android:background="@drawable/box"
+        android:clickable="false"
+        android:layout_alignBottom="@+id/maniqui"
+        android:layout_marginLeft="500px"/>
+
+    <ImageView
+        android:layout_width="200px"
+        android:layout_height="200px"
+        android:id="@+id/home"
+        android:background="@drawable/btnhome"
+        android:layout_marginTop="50px"
+        android:layout_marginLeft="100px"
+        />
+
+    <ImageView
+        android:layout_width="150px"
+        android:layout_height="150px"
+        android:id="@+id/sonido"
+        android:background="@drawable/btnsonidoon"
+        android:layout_marginTop="50px"
+        android:layout_marginLeft="2050px"
+        />
+
+    <ImageView
+        android:layout_width="150px"
+        android:layout_height="150px"
+        android:id="@+id/info"
+        android:background="@drawable/btninfo"
+        android:layout_marginTop="50px"
+        android:layout_marginLeft="2250px"
+        />
+
+</RelativeLayout>
