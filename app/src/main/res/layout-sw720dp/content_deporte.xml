@@ -17,25 +17,51 @@
 
     <ImageButton
         android:id="@+id/maniqui"
-        android:layout_width="450px"
-        android:layout_height="850px"
-        android:background="@drawable/maniquimw"
+        android:layout_width="250dp"
+        android:layout_height="500dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="30dp" />
 
+    <ImageView
+        android:id="@+id/pantalon"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:background="@drawable/shortm3"
+        android:layout_alignTop="@+id/box"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="44dp" />
+
+    <ImageView
+        android:id="@+id/camisa"
+        android:layout_width="230dp"
+        android:layout_height="140dp"
+        android:layout_marginBottom="72dp"
+        android:layout_alignBottom="@+id/pantalon"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:id="@+id/zapato"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:background="@drawable/shoes3"
+        android:layout_alignBottom="@+id/maniqui"
+        android:layout_centerHorizontal="true" />
+
+
+
     <ImageButton
-        android:layout_width="500px"
-        android:layout_height="350px"
+        android:layout_width="270dp"
+        android:layout_height="200dp"
         android:id="@+id/box"
         android:background="@drawable/box"
         android:clickable="false"
         android:layout_alignBottom="@+id/maniqui"
-        android:layout_marginLeft="500px"/>
+        android:layout_marginLeft="245dp"/>
 
     <ImageView
-        android:layout_width="200px"
-        android:layout_height="200px"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:id="@+id/home"
         android:background="@drawable/btnhome"
         android:layout_marginTop="50px"
@@ -43,20 +69,23 @@
         />
 
     <ImageView
-        android:layout_width="150px"
-        android:layout_height="150px"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:id="@+id/sonido"
-        android:layout_marginTop="50px"
-        android:layout_marginLeft="2050px"
-        />
+        android:layout_marginLeft="50dp"
+        android:background="@drawable/btnsonidoon"
+        android:layout_alignTop="@+id/home"
+        android:layout_toStartOf="@+id/info"
+        android:layout_marginEnd="46dp" />
 
     <ImageView
-        android:layout_width="150px"
-        android:layout_height="150px"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
         android:id="@+id/info"
         android:background="@drawable/btninfo"
-        android:layout_marginTop="50px"
-        android:layout_marginLeft="2250px"
-        />
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="52dp"
+        android:layout_alignTop="@+id/sonido"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

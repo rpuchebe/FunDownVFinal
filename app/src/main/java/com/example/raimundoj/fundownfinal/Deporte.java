@@ -18,46 +18,59 @@ import com.bumptech.glide.Glide;
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 
+import java.util.Random;
+
 public class Deporte extends AppCompatActivity implements View.OnClickListener{
 
 
     ImageButton box;
     ImageButton maniqui;
+    ImageView camisa;
+    ImageView pantalon;
+    ImageView zapato;
     ImageView home;
     MediaPlayer bgm;
     ImageView sonido;
     Bitmap soundOn;
     Bitmap soundOff;
     boolean toggle;
+    Random rand = new Random();
+    int n = rand.nextInt(3);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deporte);
-        startBackground();
-        box=(ImageButton)findViewById(R.id.box);
-        box.setOnClickListener(this);
-        maniqui=(ImageButton)findViewById(R.id.maniqui);
-        maniqui.setOnClickListener(this);
+
+        camisa=(ImageView)findViewById(R.id.camisa);
+        pantalon=(ImageView)findViewById(R.id.pantalon);
+        zapato=(ImageView)findViewById(R.id.zapato);
         sonido = (ImageView) findViewById(R.id.sonido);
         home = (ImageView) findViewById(R.id.home);
+        box=(ImageButton)findViewById(R.id.box);
+        maniqui=(ImageButton)findViewById(R.id.maniqui);
+
+        box.setOnClickListener(this);
+        maniqui.setOnClickListener(this);
+        sonido.setOnClickListener(this);
+        home.setOnClickListener(this);
+
         soundOn = BitmapFactory.decodeResource(getResources(), R.drawable.btnsonidoon);
         soundOff= BitmapFactory.decodeResource(getResources(), R.drawable.btnsonidoff);
         toggle = true;
         sonido.setImageBitmap(soundOn);
-        sonido.setOnClickListener(this);
-        home.setOnClickListener(this);
+
         bgm = MediaPlayer.create(this,R.raw.background);
         bgm.start();
         bgm.setLooping(true);
-        YoYo.with(Techniques.Flash)
-                .duration(1700)
-                .delay(10000)
-                .playOn(findViewById(R.id.box));
-        YoYo.with(Techniques.Flash)
-                .duration(1700)
-                .delay(12000)
-                .playOn(findViewById(R.id.maniqui));
+        startBackground();
+        startAnimation();
+        starManiqui();
+        if(n == 0) {
+
+            maniqui.setBackgroundDrawable(getResources().getDrawable(R.drawable.maniquimw));
+        }
+
 
     }
 
@@ -97,6 +110,106 @@ public class Deporte extends AppCompatActivity implements View.OnClickListener{
         Glide.with(this).load(R.drawable.fondo6).into(fondo);
     }
 
+    private void startAnimation(){
+
+
+        // Animacion 1
+
+        YoYo.with(Techniques.Flash)
+                .duration(1700)
+                .delay(100)
+                .playOn(findViewById(R.id.box));
+        YoYo.with(Techniques.Flash)
+                .duration(1700)
+                .delay(2000)
+                .playOn(findViewById(R.id.maniqui));
+        YoYo.with(Techniques.Flash)
+                .duration(1700)
+                .delay(2000)
+                .playOn(findViewById(R.id.camisa));
+        YoYo.with(Techniques.Flash)
+                .duration(1700)
+                .delay(2000)
+                .playOn(findViewById(R.id.pantalon));
+        YoYo.with(Techniques.Flash)
+                .duration(1700)
+                .delay(2000)
+                .playOn(findViewById(R.id.zapato));
+
+
+        // Animacion 2
+
+        YoYo.with(Techniques.Flash)
+                .duration(1700)
+                .delay(6000)
+                .playOn(findViewById(R.id.box));
+        YoYo.with(Techniques.Flash)
+                .duration(1700)
+                .delay(8000)
+                .playOn(findViewById(R.id.maniqui));
+        YoYo.with(Techniques.Flash)
+                .duration(1700)
+                .delay(8000)
+                .playOn(findViewById(R.id.camisa));
+        YoYo.with(Techniques.Flash)
+                .duration(1700)
+                .delay(8000)
+                .playOn(findViewById(R.id.pantalon));
+        YoYo.with(Techniques.Flash)
+                .duration(1700)
+                .delay(8000)
+                .playOn(findViewById(R.id.zapato));
+
+        // Animacion 3
+
+
+        YoYo.with(Techniques.Flash)
+                .duration(1700)
+                .delay(12000)
+                .playOn(findViewById(R.id.box));
+        YoYo.with(Techniques.Flash)
+                .duration(1700)
+                .delay(14000)
+                .playOn(findViewById(R.id.maniqui));
+        YoYo.with(Techniques.Flash)
+                .duration(1700)
+                .delay(14000)
+                .playOn(findViewById(R.id.camisa));
+        YoYo.with(Techniques.Flash)
+                .duration(1700)
+                .delay(14000)
+                .playOn(findViewById(R.id.pantalon));
+        YoYo.with(Techniques.Flash)
+                .duration(1700)
+                .delay(14000)
+                .playOn(findViewById(R.id.zapato));
+
+
+    }
+
+    private void starManiqui(){
+
+        if(n == 0) {
+
+            maniqui.setBackgroundDrawable(getResources().getDrawable(R.drawable.maniquimw));
+            camisa.setBackgroundDrawable(getResources().getDrawable(R.drawable.shirtm1));
+
+        }
+        if(n == 1) {
+
+            maniqui.setBackgroundDrawable(getResources().getDrawable(R.drawable.maniquiwb));
+            camisa.setBackgroundDrawable(getResources().getDrawable(R.drawable.shirtw1));
+
+        }
+        if(n == 2) {
+
+            maniqui.setBackgroundDrawable(getResources().getDrawable(R.drawable.maniquiww));
+            camisa.setBackgroundDrawable(getResources().getDrawable(R.drawable.shirtw1));
+
+        }
+
+    }
+
     @Override
     public void onClick(View v) {
 
@@ -105,6 +218,8 @@ public class Deporte extends AppCompatActivity implements View.OnClickListener{
             case R.id.box:
 
                 Intent intent = new Intent(Deporte.this, Box.class);
+                intent.putExtra("Son", toggle);
+
                 startActivity(intent);
 
                 break;
@@ -124,6 +239,8 @@ public class Deporte extends AppCompatActivity implements View.OnClickListener{
             case R.id.maniqui:
 
                 intent = new Intent(Deporte.this, Maniqui.class);
+                intent.putExtra("variable", n);
+
                 startActivity(intent);
 
                 break;

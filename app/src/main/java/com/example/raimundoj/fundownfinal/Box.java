@@ -67,6 +67,8 @@ public class Box extends AppCompatActivity implements View.OnTouchListener,View.
         item11.setOnTouchListener(this);
 
         //<---------------------Sonido------------------------>
+        Intent intent =getIntent();
+        Bundle extras = intent.getExtras();
         sonido = (ImageView) findViewById(R.id.sonido);
         home = (ImageView) findViewById(R.id.home);
         soundOn = BitmapFactory.decodeResource(getResources(), R.drawable.btnsonidoon);
@@ -75,9 +77,10 @@ public class Box extends AppCompatActivity implements View.OnTouchListener,View.
         sonido.setImageBitmap(soundOn);
         sonido.setOnClickListener(this);
         home.setOnClickListener(this);
-        bgm = MediaPlayer.create(this,R.raw.background1);
+        bgm = MediaPlayer.create(this, R.raw.background2);
         bgm.start();
         bgm.setLooping(true);
+
         //<------------------- Fin Sonido ------------------------->
 
     }
