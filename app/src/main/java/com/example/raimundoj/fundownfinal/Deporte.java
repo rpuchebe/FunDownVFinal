@@ -42,9 +42,7 @@ public class Deporte extends AppCompatActivity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deporte);
 
-        camisa=(ImageView)findViewById(R.id.camisa);
-        pantalon=(ImageView)findViewById(R.id.pantalon);
-        zapato=(ImageView)findViewById(R.id.zapato);
+
         sonido = (ImageView) findViewById(R.id.sonido);
         home = (ImageView) findViewById(R.id.home);
         box=(ImageButton)findViewById(R.id.box);
@@ -82,19 +80,6 @@ public class Deporte extends AppCompatActivity implements View.OnClickListener{
         super.onBackPressed();
     }
 
-
-    public void toggleSound(View view){
-        if(toggle){
-            bgm.pause();
-            toggle = false;
-            sonido.setImageBitmap(soundOff);
-        }else{
-            bgm.start();
-            toggle = true;
-            sonido.setImageBitmap(soundOn);
-        }
-    }
-
     protected void  onResume(){
         super.onResume();
     }
@@ -123,18 +108,7 @@ public class Deporte extends AppCompatActivity implements View.OnClickListener{
                 .duration(1700)
                 .delay(2000)
                 .playOn(findViewById(R.id.maniqui));
-        YoYo.with(Techniques.Flash)
-                .duration(1700)
-                .delay(2000)
-                .playOn(findViewById(R.id.camisa));
-        YoYo.with(Techniques.Flash)
-                .duration(1700)
-                .delay(2000)
-                .playOn(findViewById(R.id.pantalon));
-        YoYo.with(Techniques.Flash)
-                .duration(1700)
-                .delay(2000)
-                .playOn(findViewById(R.id.zapato));
+
 
 
         // Animacion 2
@@ -147,18 +121,7 @@ public class Deporte extends AppCompatActivity implements View.OnClickListener{
                 .duration(1700)
                 .delay(8000)
                 .playOn(findViewById(R.id.maniqui));
-        YoYo.with(Techniques.Flash)
-                .duration(1700)
-                .delay(8000)
-                .playOn(findViewById(R.id.camisa));
-        YoYo.with(Techniques.Flash)
-                .duration(1700)
-                .delay(8000)
-                .playOn(findViewById(R.id.pantalon));
-        YoYo.with(Techniques.Flash)
-                .duration(1700)
-                .delay(8000)
-                .playOn(findViewById(R.id.zapato));
+
 
         // Animacion 3
 
@@ -169,20 +132,8 @@ public class Deporte extends AppCompatActivity implements View.OnClickListener{
                 .playOn(findViewById(R.id.box));
         YoYo.with(Techniques.Flash)
                 .duration(1700)
-                .delay(14000)
-                .playOn(findViewById(R.id.maniqui));
-        YoYo.with(Techniques.Flash)
-                .duration(1700)
-                .delay(14000)
-                .playOn(findViewById(R.id.camisa));
-        YoYo.with(Techniques.Flash)
-                .duration(1700)
-                .delay(14000)
-                .playOn(findViewById(R.id.pantalon));
-        YoYo.with(Techniques.Flash)
-                .duration(1700)
-                .delay(14000)
-                .playOn(findViewById(R.id.zapato));
+                .delay(14000);
+
 
 
     }
@@ -192,19 +143,16 @@ public class Deporte extends AppCompatActivity implements View.OnClickListener{
         if(n == 0) {
 
             maniqui.setBackgroundDrawable(getResources().getDrawable(R.drawable.maniquimw));
-            camisa.setBackgroundDrawable(getResources().getDrawable(R.drawable.shirtm1));
 
         }
         if(n == 1) {
 
             maniqui.setBackgroundDrawable(getResources().getDrawable(R.drawable.maniquiwb));
-            camisa.setBackgroundDrawable(getResources().getDrawable(R.drawable.shirtw1));
 
         }
         if(n == 2) {
 
             maniqui.setBackgroundDrawable(getResources().getDrawable(R.drawable.maniquiww));
-            camisa.setBackgroundDrawable(getResources().getDrawable(R.drawable.shirtw1));
 
         }
 

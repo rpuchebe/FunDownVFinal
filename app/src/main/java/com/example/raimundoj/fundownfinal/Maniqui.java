@@ -100,6 +100,7 @@ public class Maniqui extends AppCompatActivity implements View.OnTouchListener,V
         boton=(Button)findViewById(R.id.button2);
         SetManiqui();
         boton.setOnClickListener(this);
+        items[0].setOnTouchListener(this);
         items[1].setOnTouchListener(this);
         items[2].setOnTouchListener(this);
         items[3].setOnTouchListener(this);
@@ -115,7 +116,7 @@ public class Maniqui extends AppCompatActivity implements View.OnTouchListener,V
         items[13].setOnTouchListener(this);
         items[14].setOnTouchListener(this);
         items[15].setOnTouchListener(this);
-        items[0].setOnTouchListener(this);
+
         boton.setVisibility(View.INVISIBLE);
 
         //<---------------------Sonido------------------------>
@@ -298,6 +299,7 @@ public class Maniqui extends AppCompatActivity implements View.OnTouchListener,V
 
                     par.topMargin = 738;
                     par.leftMargin = 1068;
+                    v.setEnabled(false);
                     hits++;
 
                 }else{par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
@@ -313,6 +315,7 @@ public class Maniqui extends AppCompatActivity implements View.OnTouchListener,V
                 if(temporal.equals(opt1)){
                     par.topMargin = 738;
                     par.leftMargin = 1160;
+                    v.setEnabled(false);
                     hits++;
                 }else{par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             }
@@ -328,6 +331,7 @@ public class Maniqui extends AppCompatActivity implements View.OnTouchListener,V
 
                     par.topMargin = 985;
                     par.leftMargin = 1162;
+                    v.setEnabled(false);
                     hits++;
 
                 }else{par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
@@ -346,6 +350,7 @@ public class Maniqui extends AppCompatActivity implements View.OnTouchListener,V
 
                     par.topMargin = 987;
                     par.leftMargin = 1138;
+                    v.setEnabled(false);
                     hits++;
 
                 }else{par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
@@ -364,6 +369,7 @@ public class Maniqui extends AppCompatActivity implements View.OnTouchListener,V
 
                     par.topMargin = 1225;
                     par.leftMargin = 1140;
+                    v.setEnabled(false);
                     hits++;
 
                 }else{par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
@@ -383,6 +389,7 @@ public class Maniqui extends AppCompatActivity implements View.OnTouchListener,V
 
                     par.topMargin = 1200;
                     par.leftMargin = 1140;
+                    v.setEnabled(false);
                     hits++;
 
                 }else{par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
@@ -413,6 +420,7 @@ public class Maniqui extends AppCompatActivity implements View.OnTouchListener,V
     public boolean onTouch(View v, MotionEvent event) {
 
         final RelativeLayout.LayoutParams par = (RelativeLayout.LayoutParams) v.getLayoutParams();
+
         switch (event.getAction()) {
             case MotionEvent.ACTION_MOVE: {
                 par.topMargin += (int) event.getRawY() - prevY;

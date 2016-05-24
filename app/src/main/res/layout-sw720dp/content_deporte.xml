@@ -23,32 +23,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="30dp" />
 
-    <ImageView
-        android:id="@+id/pantalon"
-        android:layout_width="120dp"
-        android:layout_height="80dp"
-        android:background="@drawable/shortm3"
-        android:layout_alignTop="@+id/box"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="44dp" />
-
-    <ImageView
-        android:id="@+id/camisa"
-        android:layout_width="230dp"
-        android:layout_height="140dp"
-        android:layout_marginBottom="72dp"
-        android:layout_alignBottom="@+id/pantalon"
-        android:layout_centerHorizontal="true" />
-
-    <ImageView
-        android:id="@+id/zapato"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:background="@drawable/shoes3"
-        android:layout_alignBottom="@+id/maniqui"
-        android:layout_centerHorizontal="true" />
-
-
 
     <ImageButton
         android:layout_width="270dp"
