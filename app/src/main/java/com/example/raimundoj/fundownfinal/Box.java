@@ -12,16 +12,26 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
+
+import java.util.Random;
 
 public class Box extends AppCompatActivity implements View.OnTouchListener,View.OnClickListener {
 
     private static final String msg = "LogsAndroid";
     ImageButton box;
-    private ImageView items[] = new ImageView[35];
-    int prevX, prevY, firtsX, firtsY, temp1=0;
+    private ImageView items[] = new ImageView[34];
+    private Integer[] orden = new Integer[34];
+    int prevX, prevY, firtsX, firtsY;
+    Random rand = new Random();
+    int rep = 0;
+    int hits = 0;
+    Button boton;
+
     //Variables Sonido
     ImageView home;
     MediaPlayer bgm;
@@ -69,18 +79,30 @@ public class Box extends AppCompatActivity implements View.OnTouchListener,View.
         items[31]=(ImageView)findViewById(R.id.item32);
         items[32]=(ImageView)findViewById(R.id.item33);
         items[33]=(ImageView)findViewById(R.id.item34);
-        items[34]=(ImageView)findViewById(R.id.item35);
-
+        boton=(Button)findViewById(R.id.button2);
+        boton.setOnClickListener(this);
         box=(ImageButton)findViewById(R.id.box);
         box.setOnClickListener(this);
-        for(int i=0;i <=34; i++){
+        boton.setVisibility(View.INVISIBLE);
+        for(int i=0;i <=33; i++){
 
             items[i].setOnTouchListener(this);
             items[i].setVisibility(View.INVISIBLE);
             items[i].setEnabled(false);
 
+
         }
-        SetImagenes();
+        for(int i=0;i <=33; i++){
+
+            int random = rand.nextInt(34);
+            if(orden[random]==null){
+                orden[random]=i;
+            }else{i--;}
+
+
+        }
+
+
 
 
         //<---------------------Sonido------------------------>
@@ -104,8 +126,43 @@ public class Box extends AppCompatActivity implements View.OnTouchListener,View.
 
     final void SetImagenes(){
 
+        RelativeLayout.LayoutParams par1 = (RelativeLayout.LayoutParams) items[orden[0+rep]].getLayoutParams();
+        items[orden[0+rep]].setVisibility(View.VISIBLE);
+        items[orden[0+rep]].setEnabled(true);
+          par1.topMargin=1050;
+          par1.leftMargin=850;
+          items[orden[0+rep]].setLayoutParams(par1);
 
+        RelativeLayout.LayoutParams par2 = (RelativeLayout.LayoutParams) items[orden[1+rep]].getLayoutParams();
+        items[orden[1+rep]].setVisibility(View.VISIBLE);
+        items[orden[1+rep]].setEnabled(true);
+          par2.topMargin=1050;
+          par2.leftMargin=1100;
+        items[orden[1+rep]].setLayoutParams(par2);
 
+        RelativeLayout.LayoutParams par3 = (RelativeLayout.LayoutParams) items[orden[2+rep]].getLayoutParams();
+        items[orden[2+rep]].setVisibility(View.VISIBLE);
+        items[orden[2+rep]].setEnabled(true);
+          par3.topMargin=1050;
+          par3.leftMargin=1500;
+        items[orden[2+rep]].setLayoutParams(par3);
+
+        RelativeLayout.LayoutParams par4 = (RelativeLayout.LayoutParams) items[orden[3+rep]].getLayoutParams();
+        items[orden[3+rep]].setVisibility(View.VISIBLE);
+        items[orden[3+rep]].setEnabled(true);
+          par4.topMargin=1050;
+          par4.leftMargin=1800;
+        items[orden[3+rep]].setLayoutParams(par4);
+        if(rep!=6){
+
+            RelativeLayout.LayoutParams par5 = (RelativeLayout.LayoutParams) items[orden[4+rep]].getLayoutParams();
+            items[orden[4 + rep]].setVisibility(View.VISIBLE);
+            items[orden[4+rep]].setEnabled(true);
+            par5.topMargin=1050;
+            par5.leftMargin=2100;
+            items[orden[4+rep]].setLayoutParams(par5);
+
+        }
 
 
 
@@ -124,6 +181,7 @@ public class Box extends AppCompatActivity implements View.OnTouchListener,View.
     public boolean onTouch(View v, MotionEvent event) {
 
         final RelativeLayout.LayoutParams par = (RelativeLayout.LayoutParams) v.getLayoutParams();
+
         switch (event.getAction()) {
             case MotionEvent.ACTION_MOVE: {
                 par.topMargin += (int) event.getRawY() - prevY;
@@ -159,27 +217,27 @@ public class Box extends AppCompatActivity implements View.OnTouchListener,View.
 
                     Verificar(v, prevX, prevY, firtsX, firtsY, 0, par, "shortw");
 
-                }if(v == items[15]  || v == items[16] || v == items[17] ) {
+                }if(v == items[15]  || v == items[16] || v == items[17] || v == items[18]  ) {
 
-                    Verificar(v, prevX, prevY, firtsX, firtsY, 0, par, "shoesw");
+                    Verificar(v, prevX, prevY, firtsX, firtsY, 0, par, "basketshoes");
 
-                }if(v == items[18]  || v == items[19] || v == items[20] ) {
+                }if(v == items[19]  || v == items[20] || v == items[21] ) {
 
                     Verificar(v, prevX, prevY, firtsX, firtsY, 0, par, "basketshirtm");
 
-                }if(v == items[21]  || v == items[22] || v == items[23] ) {
+                }if(v == items[22]  || v == items[23] || v == items[24] ) {
 
                     Verificar(v, prevX, prevY, firtsX, firtsY, 0, par, "basketshortm");
 
-                }if(v == items[24]  || v == items[25] || v == items[26] ) {
+                }if(v == items[25]  || v == items[26] || v == items[27] ) {
 
                     Verificar(v, prevX, prevY, firtsX, firtsY, 0, par, "basketshirtw");
 
-                }if(v == items[27]  || v == items[28] || v == items[29] ) {
+                }if(v == items[28]  || v == items[29] || v == items[30] ) {
 
                     Verificar(v, prevX, prevY, firtsX, firtsY, 0, par, "basketshortw");
 
-                }if(v == items[30]  || v == items[31] || v == items[32] ) {
+                }if(v == items[31]  || v == items[32] || v == items[33] ) {
 
                     Verificar(v, prevX, prevY, firtsX, firtsY, 0, par, "ball");
 
@@ -228,6 +286,8 @@ public class Box extends AppCompatActivity implements View.OnTouchListener,View.
             if(temp1==0){
                 par.topMargin = 320;
                 par.leftMargin = 150;
+                v.setEnabled(false);
+                hits++;
 
             }
         }
@@ -240,7 +300,8 @@ public class Box extends AppCompatActivity implements View.OnTouchListener,View.
             if(temp1==0){
                 par.topMargin = 360;
                 par.leftMargin = 640;
-                v.setEnabled(false);}
+                v.setEnabled(false);
+                hits++;}
         }
         if(tipo == "shoesmen"){
 
@@ -252,6 +313,7 @@ public class Box extends AppCompatActivity implements View.OnTouchListener,View.
                 par.topMargin = 320;
                 par.leftMargin = 1820;
                 v.setEnabled(false);
+                hits++;
             }
         }
         if(tipo == "basketshirtm"){
@@ -263,7 +325,8 @@ public class Box extends AppCompatActivity implements View.OnTouchListener,View.
             if(temp1==0){
                 par.topMargin = 317;
                 par.leftMargin = 1050;
-                v.setEnabled(false);}
+                v.setEnabled(false);
+                hits++;}
 
         }
         if(tipo == "basketshortm"){
@@ -275,9 +338,10 @@ public class Box extends AppCompatActivity implements View.OnTouchListener,View.
             if(temp1==0){
                 par.topMargin = 320;
                 par.leftMargin = 1410;
-                v.setEnabled(false);}
+                v.setEnabled(false);
+                hits++;}
         }
-        if(tipo == "shoesw"){
+        if(tipo == "basketshoes"){
 
             if (par.topMargin < 600) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if (par.topMargin > 800) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
@@ -286,7 +350,8 @@ public class Box extends AppCompatActivity implements View.OnTouchListener,View.
             if(temp1==0){
                 par.topMargin = 715;
                 par.leftMargin = 1775;
-                v.setEnabled(false);}
+                v.setEnabled(false);
+                hits++;}
         }
         if(tipo == "shirtw"){
 
@@ -297,7 +362,8 @@ public class Box extends AppCompatActivity implements View.OnTouchListener,View.
             if(temp1==0){
                 par.topMargin = 715;
                 par.leftMargin = 150;
-                v.setEnabled(false);}
+                v.setEnabled(false);
+                hits++;}
 
         }
         if(tipo == "shortw"){
@@ -309,7 +375,8 @@ public class Box extends AppCompatActivity implements View.OnTouchListener,View.
             if(temp1==0){
                 par.topMargin = 715;
                 par.leftMargin = 640;
-                v.setEnabled(false);}
+                v.setEnabled(false);
+                hits++;}
         }
 
         if(tipo == "basketshirtw"){
@@ -321,7 +388,8 @@ public class Box extends AppCompatActivity implements View.OnTouchListener,View.
             if(temp1==0){
                 par.topMargin = 715;
                 par.leftMargin = 1050;
-                v.setEnabled(false);}
+                v.setEnabled(false);
+                hits++;}
 
         }
         if(tipo == "basketshortw"){
@@ -333,7 +401,8 @@ public class Box extends AppCompatActivity implements View.OnTouchListener,View.
             if(temp1==0){
                 par.topMargin = 690;
                 par.leftMargin = 1445;
-                v.setEnabled(false);}
+                v.setEnabled(false);
+                hits++;}
         }
 
         if(tipo == "ball"){
@@ -345,7 +414,15 @@ public class Box extends AppCompatActivity implements View.OnTouchListener,View.
             if(temp1==0){
                 par.topMargin = 500;
                 par.leftMargin = 2160;
-                v.setEnabled(false);}
+                v.setEnabled(false);
+                hits++;}
+        }
+
+        if(hits == 34){
+
+            Toast.makeText(getApplicationContext(), "Felicitaciones Ganaste !",
+                    Toast.LENGTH_LONG).show();
+            boton.setVisibility(View.VISIBLE);
         }
         return par;
     }
@@ -373,6 +450,21 @@ public class Box extends AppCompatActivity implements View.OnTouchListener,View.
             case R.id.home:
 
                 Intent intent = new Intent(Box.this, MainActivity.class);
+                startActivity(intent);
+
+                break;
+
+            case R.id.box:
+
+                rep=rep+5;
+                SetImagenes();
+
+
+                break;
+
+            case R.id.button2:
+
+                intent = new Intent(Box.this,Box.class);
                 startActivity(intent);
 
                 break;

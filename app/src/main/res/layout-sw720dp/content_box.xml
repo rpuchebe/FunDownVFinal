@@ -15,6 +15,14 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Volver a Jugar"
+        android:id="@+id/button2"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal="true" />
 
     <ImageButton
         android:layout_width="270dp"
@@ -165,18 +173,11 @@
         android:layout_marginTop="1050px"
         android:layout_marginLeft="1480px"/>
 
-    <ImageView
-        android:layout_width="300px"
-        android:layout_height="200px"
-        android:id="@+id/item18"
-        android:background="@drawable/basketshoes2"
-        android:layout_marginTop="1050px"
-        android:layout_marginLeft="1480px"/>
 
     <ImageView
         android:layout_width="300px"
         android:layout_height="200px"
-        android:id="@+id/item19"
+        android:id="@+id/item18"
         android:background="@drawable/basketshoes3"
         android:layout_marginTop="1050px"
         android:layout_marginLeft="1480px"/>
@@ -184,7 +185,7 @@
     <ImageView
         android:layout_width="300px"
         android:layout_height="200px"
-        android:id="@+id/item20"
+        android:id="@+id/item19"
         android:background="@drawable/basketshoes4"
         android:layout_marginTop="1050px"
         android:layout_marginLeft="1480px"/>
@@ -192,7 +193,7 @@
     <ImageView
         android:layout_width="200px"
         android:layout_height="250px"
-        android:id="@+id/item21"
+        android:id="@+id/item20"
         android:background="@drawable/basketshirtm1"
         android:layout_marginTop="1050px"
         android:layout_marginLeft="1800px"/>
@@ -200,7 +201,7 @@
     <ImageView
         android:layout_width="200px"
         android:layout_height="250px"
-        android:id="@+id/item22"
+        android:id="@+id/item21"
         android:background="@drawable/basketshirtm2"
         android:layout_marginTop="1050px"
         android:layout_marginLeft="1800px"/>
@@ -208,7 +209,7 @@
     <ImageView
         android:layout_width="200px"
         android:layout_height="250px"
-        android:id="@+id/item23"
+        android:id="@+id/item22"
         android:background="@drawable/basketshirtm3"
         android:layout_marginTop="1050px"
         android:layout_marginLeft="1800px"/>
@@ -216,7 +217,7 @@
     <ImageView
         android:layout_width="300px"
         android:layout_height="200px"
-        android:id="@+id/item24"
+        android:id="@+id/item23"
         android:background="@drawable/basketshortm1"
         android:layout_marginTop="1050px"
         android:layout_marginLeft="2030px"/>
@@ -224,7 +225,7 @@
     <ImageView
         android:layout_width="300px"
         android:layout_height="200px"
-        android:id="@+id/item25"
+        android:id="@+id/item24"
         android:background="@drawable/basketshortm2"
         android:layout_marginTop="1050px"
         android:layout_marginLeft="2030px"/>
@@ -232,7 +233,7 @@
     <ImageView
         android:layout_width="300px"
         android:layout_height="200px"
-        android:id="@+id/item26"
+        android:id="@+id/item25"
         android:background="@drawable/basketshortm3"
         android:layout_marginTop="1050px"
         android:layout_marginLeft="2030px"/>
@@ -240,7 +241,7 @@
     <ImageView
         android:layout_width="200px"
         android:layout_height="250px"
-        android:id="@+id/item27"
+        android:id="@+id/item26"
         android:background="@drawable/basketshirtw1"
         android:layout_marginTop="50px"
         android:layout_marginLeft="850px"/>
@@ -248,7 +249,7 @@
     <ImageView
         android:layout_width="200px"
         android:layout_height="250px"
-        android:id="@+id/item28"
+        android:id="@+id/item27"
         android:background="@drawable/basketshirtw2"
         android:layout_marginTop="50px"
         android:layout_marginLeft="850px"/>
@@ -256,7 +257,7 @@
     <ImageView
         android:layout_width="200px"
         android:layout_height="250px"
-        android:id="@+id/item29"
+        android:id="@+id/item28"
         android:background="@drawable/basketshirtw3"
         android:layout_marginTop="50px"
         android:layout_marginLeft="850px"/>
@@ -264,7 +265,7 @@
     <ImageView
         android:layout_width="200px"
         android:layout_height="220px"
-        android:id="@+id/item30"
+        android:id="@+id/item29"
         android:background="@drawable/basketshortw1"
         android:layout_marginTop="50px"
         android:layout_marginLeft="1150px"/>
@@ -272,7 +273,7 @@
     <ImageView
         android:layout_width="200px"
         android:layout_height="220px"
-        android:id="@+id/item31"
+        android:id="@+id/item30"
         android:background="@drawable/basketshortw2"
         android:layout_marginTop="50px"
         android:layout_marginLeft="1150px"/>
@@ -280,7 +281,7 @@
     <ImageView
         android:layout_width="200px"
         android:layout_height="220px"
-        android:id="@+id/item32"
+        android:id="@+id/item31"
         android:background="@drawable/basketshortw3"
         android:layout_marginTop="50px"
         android:layout_marginLeft="1150px"/>
@@ -288,7 +289,7 @@
     <ImageView
         android:layout_width="250px"
         android:layout_height="250px"
-        android:id="@+id/item33"
+        android:id="@+id/item32"
         android:background="@drawable/ballbasket"
         android:layout_marginTop="50px"
         android:layout_marginLeft="1400px"/>
@@ -296,7 +297,7 @@
     <ImageView
         android:layout_width="250px"
         android:layout_height="250px"
-        android:id="@+id/item34"
+        android:id="@+id/item33"
         android:background="@drawable/ballsoccer"
         android:layout_marginTop="50px"
         android:layout_marginLeft="1400px"/>
@@ -304,7 +305,7 @@
     <ImageView
         android:layout_width="250px"
         android:layout_height="250px"
-        android:id="@+id/item35"
+        android:id="@+id/item34"
         android:background="@drawable/ballfutbol"
         android:layout_marginTop="50px"
         android:layout_marginLeft="1400px"/>
