@@ -1,3 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        is-multidex="true"
+        jar="C:\Users\RaimundoJ\Documents\GitHub\FunDownVFinal\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="23.0.2"
+        sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
+        <dex dex="C:\Users\RaimundoJ\Documents\GitHub\FunDownVFinal\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.4.0_f9dcbb1b4d6f7bf4c9b67f6871fada376ae13523\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\RaimundoJ\Documents\GitHub\FunDownVFinal\app\build\intermediates\exploded-aar\com.daimajia.easing\library\1.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="23.0.2"
+        sha1="d7e947f993bf32a00fcb3078cdda8bb11c930afb">
+        <dex dex="C:\Users\RaimundoJ\Documents\GitHub\FunDownVFinal\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.daimajia.easing-library-1.0.1_e687d4cdc4bf0d2824d89f4ae168c1a62d67fffa\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\RaimundoJ\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="23.0.2"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="C:\Users\RaimundoJ\Documents\GitHub\FunDownVFinal\app\build\intermediates\transforms\dex\debug\folders\1000\10\library-2.4.0_a139a66dbb924654deb1c654387ee2a8d63a4bb9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\RaimundoJ\Documents\GitHub\FunDownVFinal\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="23.0.2"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="C:\Users\RaimundoJ\Documents\GitHub\FunDownVFinal\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-23.1.1_85ee7d4684f0cdf981b97872f9bee62a373ace49\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\RaimundoJ\Documents\GitHub\FunDownVFinal\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="23.0.2"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="C:\Users\RaimundoJ\Documents\GitHub\FunDownVFinal\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.4.0_e08a65d06300dd28c3f1c8576c4757edbae3bf67\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\RaimundoJ\Documents\GitHub\FunDownVFinal\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="23.0.2"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="C:\Users\RaimundoJ\Documents\GitHub\FunDownVFinal\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.4.0_56ffebb3e574917b5bcb0297a2e08f621a7a6f84\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\RaimundoJ\Documents\GitHub\FunDownVFinal\app\build\intermediates\exploded-aar\com.daimajia.androidanimations\library\1.1.3\jars\classes.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="23.0.2"
+        sha1="8cec50fc9cc847bad0d6ed7d93814f4b34744521">
+        <dex dex="C:\Users\RaimundoJ\Documents\GitHub\FunDownVFinal\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.daimajia.androidanimations-library-1.1.3_eba89d339ee7588860948460a1e5fefd8dfa05b8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\RaimundoJ\Documents\GitHub\FunDownVFinal\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="23.0.2"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="C:\Users\RaimundoJ\Documents\GitHub\FunDownVFinal\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.4.0_be9069a245e1fb96fc8c8263834c14d5393378ef\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\RaimundoJ\Documents\GitHub\FunDownVFinal\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="23.0.2"
+        sha1="3626c4ab9110ca7d9c97085383a8671ab2dc9e3e">
+        <dex dex="C:\Users\RaimundoJ\Documents\GitHub\FunDownVFinal\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_9b037343d694608c34036f0cc38d75b99dee5f48\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\RaimundoJ\Documents\GitHub\FunDownVFinal\app\build\intermediates\exploded-aar\hanks.xyz\smallbang-library\0.1.2\jars\classes.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="23.0.2"
+        sha1="f4d1321eac98b237f7df36aadcbaefa1fe662551">
+        <dex dex="C:\Users\RaimundoJ\Documents\GitHub\FunDownVFinal\app\build\intermediates\transforms\dex\debug\folders\1000\10\hanks.xyz-smallbang-library-0.1.2_16088ef45b2184d88af44fe0487f704a164cfe61\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\RaimundoJ\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="23.0.2"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="C:\Users\RaimundoJ\Documents\GitHub\FunDownVFinal\app\build\intermediates\transforms\dex\debug\folders\1000\10\glide-3.7.0_29a1c28635f7a872d7eee1222a569cc66ac23deb\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\RaimundoJ\Documents\GitHub\FunDownVFinal\app\build\intermediates\exploded-aar\com.android.support\design\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="23.0.2"
+        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
+        <dex dex="C:\Users\RaimundoJ\Documents\GitHub\FunDownVFinal\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-23.1.1_3e42a027b2028f6a398b88bd74a78d9b9648d430\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\RaimundoJ\Documents\GitHub\FunDownVFinal\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="23.0.2"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="C:\Users\RaimundoJ\Documents\GitHub\FunDownVFinal\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.4.0_8b7e57f3d5b3477f265376def1eaaa11a11ce71c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\RaimundoJ\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="23.0.2"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="C:\Users\RaimundoJ\Documents\GitHub\FunDownVFinal\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.4.0_761329d295a7ab03bae3b206fdf4c3cb6499b6c1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\RaimundoJ\Documents\GitHub\FunDownVFinal\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="false"
+        revision="23.0.2"
+        sha1="9f9b373f16a30855f96a5a1568ff3e7253f515fa">
+        <dex dex="C:\Users\RaimundoJ\Documents\GitHub\FunDownVFinal\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_8a1f900c8fc23f482548ac125592f21631bbb59f\classes.dex" />
+    </item>
+
+</items>

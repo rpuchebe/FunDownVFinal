@@ -37,41 +37,39 @@ public class Maniqui extends AppCompatActivity implements View.OnTouchListener,V
 
     Random rand = new Random();
     int optionshirt = rand.nextInt(6);
-    int optionshort = rand.nextInt(5);
-    int optionshoes = rand.nextInt(5);
+    int optionshort = rand.nextInt(6);
+    int optionshoes = rand.nextInt(4);
     private ImageView items[] = new ImageView[16];
     private Integer[] background = new Integer[16];
     private String[] valores = new String[32];
     int shirts = rand.nextInt(3);
     int shorts = rand.nextInt(3);
+    String opt1;
+    String opt2;
+    String opt3;
 
     private Integer[] shirtsm = { R.drawable.shirtm1, R.drawable.shirtm2,
             R.drawable.shirtm3, R.drawable.basketshirtm1, R.drawable.basketshirtm2,R.drawable.basketshirtm3, };
 
-    private Integer[] shirtsw = { R.drawable.shirtw1, R.drawable.shirtw2,
-            R.drawable.shirtw3, R.drawable.basketshirtw1, R.drawable.basketshirtw2,R.drawable.basketshirtw3, };
+    private Integer[] bozshirtsm = { R.drawable.bozshirtm1, R.drawable.bozshirtm2,
+            R.drawable.bozshirtm3, R.drawable.bozbasketshirtm1, R.drawable.bozbasketshirtm2,R.drawable.bozbasketshirtm3, };
 
-    private Integer[] shortsm = { R.drawable.shortm1,
+    private Integer[] shirtsw = { R.drawable.shirtw1, R.drawable.shirtw2,
+            R.drawable.shirtw3, R.drawable.basketshirtm1, R.drawable.basketshirtm2,R.drawable.basketshirtm3, };
+
+    private Integer[] bozshirtsw = { R.drawable.bozshirtw1, R.drawable.bozshirtw2,
+            R.drawable.bozshirtw3, R.drawable.bozbasketshirtm1, R.drawable.bozbasketshirtm2,R.drawable.bozbasketshirtm3, };
+
+    private Integer[] shortsm = { R.drawable.shortm1,R.drawable.shortm2,
             R.drawable.shortm3, R.drawable.basketshortm1, R.drawable.basketshortm2,R.drawable.basketshortm3, };
 
-    private Integer[] shortsw = {  R.drawable.shortm1,
-            R.drawable.shortm3, R.drawable.basketshortm1, R.drawable.basketshortm2,R.drawable.basketshortm3 };
-
-    private Integer[] shoess = { R.drawable.shoes1, R.drawable.shoes2,
-            R.drawable.shoes3, R.drawable.basketshoes2,R.drawable.basketshoes3 };
-
-    private Integer[] men = { R.drawable.shirtm1, R.drawable.shirtm2,
-            R.drawable.shirtm3, R.drawable.basketshirtm1, R.drawable.basketshirtm2,R.drawable.basketshirtm3,R.drawable.shortm1,
-            R.drawable.shortm3, R.drawable.basketshortm1, R.drawable.basketshortm2,R.drawable.basketshortm3,R.drawable.shoes1, R.drawable.shoes2,
-            R.drawable.shoes3, R.drawable.basketshoes2,R.drawable.basketshoes3 };
-
-    private Integer[] women = { R.drawable.shirtw1, R.drawable.shirtw2,
-            R.drawable.shirtw3, R.drawable.basketshirtw1, R.drawable.basketshirtw2,R.drawable.basketshirtw3, R.drawable.shortw1,
-            R.drawable.shortw3, R.drawable.basketshortw1, R.drawable.basketshortw2,R.drawable.basketshortw3 ,R.drawable.shoes1, R.drawable.shoes2,
-            R.drawable.shoes3, R.drawable.basketshoes2,R.drawable.basketshoes3 };
+    private Integer[] bozshortsm = { R.drawable.bozshortm1,R.drawable.bozshortm2,
+            R.drawable.bozshortm3, R.drawable.bozbasketshortm1, R.drawable.bozbasketshortm2,R.drawable.bozbasketshortm3, };
 
 
+    private Integer[] shoess = { R.drawable.shoes3, R.drawable.shoes2,R.drawable.basketshoes2,R.drawable.basketshoes1 };
 
+    private Integer[] bozshoess = { R.drawable.bozshoes3, R.drawable.bozshoes2,R.drawable.bozbasketshoes2,R.drawable.bozbasketshoes1 };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -100,22 +98,11 @@ public class Maniqui extends AppCompatActivity implements View.OnTouchListener,V
         boton=(Button)findViewById(R.id.button2);
         SetManiqui();
         boton.setOnClickListener(this);
-        items[0].setOnTouchListener(this);
-        items[1].setOnTouchListener(this);
-        items[2].setOnTouchListener(this);
-        items[3].setOnTouchListener(this);
-        items[4].setOnTouchListener(this);
-        items[5].setOnTouchListener(this);
-        items[6].setOnTouchListener(this);
-        items[7].setOnTouchListener(this);
-        items[8].setOnTouchListener(this);
-        items[9].setOnTouchListener(this);
-        items[10].setOnTouchListener(this);
-        items[11].setOnTouchListener(this);
-        items[12].setOnTouchListener(this);
-        items[13].setOnTouchListener(this);
-        items[14].setOnTouchListener(this);
-        items[15].setOnTouchListener(this);
+        for(int i=0;i <=15; i++){
+
+            items[i].setOnTouchListener(this);
+
+        }
 
         boton.setVisibility(View.INVISIBLE);
 
@@ -154,19 +141,80 @@ public class Maniqui extends AppCompatActivity implements View.OnTouchListener,V
             n = extras.getInt("variable");
         }
 
-        items[4].setBackgroundDrawable(getResources().getDrawable(R.drawable.shoes1));
         items[1].setBackgroundDrawable(getResources().getDrawable(R.drawable.shoes2));
         items[5].setBackgroundDrawable(getResources().getDrawable(R.drawable.shoes3));
         items[15].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshoes1));
         items[14].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshoes2));
+        if(shorts == 0) {
+            items[4].setBackgroundDrawable(getResources().getDrawable(R.drawable.shortm1));
+            items[7].setBackgroundDrawable(getResources().getDrawable(R.drawable.shortm2));
+            items[2].setBackgroundDrawable(getResources().getDrawable(R.drawable.shortm3));
+            items[13].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshortm1));
+            items[12].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshortm2));
+            items[8].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshortm3));
+
+        }
+        if(shorts == 1) {
+            items[4].setBackgroundDrawable(getResources().getDrawable(R.drawable.shortm3));
+            items[7].setBackgroundDrawable(getResources().getDrawable(R.drawable.shortm2));
+            items[2].setBackgroundDrawable(getResources().getDrawable(R.drawable.shortm1));
+            items[13].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshortm3));
+            items[12].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshortm2));
+            items[8].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshortm1));
+        }
+        if(shorts == 2) {
+            items[4].setBackgroundDrawable(getResources().getDrawable(R.drawable.shortm2));
+            items[7].setBackgroundDrawable(getResources().getDrawable(R.drawable.shortm1));
+            items[2].setBackgroundDrawable(getResources().getDrawable(R.drawable.shortm3));
+            items[13].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshortm2));
+            items[12].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshortm1));
+            items[8].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshortm3));
+        }
+
+        int ishirt =optionshirt;
+        int ishort =optionshort;
+        int ishoes =optionshoes;
+
+
+        if(shirtsm[ishirt].equals(R.drawable.basketshirtm1) || shirtsm[ishirt].equals(R.drawable.basketshirtm2) || shirtsm[ishirt].equals(R.drawable.basketshirtm3) ){
+
+            RelativeLayout.LayoutParams par1 = (RelativeLayout.LayoutParams) option1.getLayoutParams();
+            par1.width=250;
+            par1.height=300;
+            option1.setLayoutParams(par1);
+
+        }
+        if(shortsm[ishort].equals(R.drawable.basketshortm1) || shortsm[ishort].equals(R.drawable.basketshortm2) || shortsm[ishort].equals(R.drawable.basketshortm3) ){
+
+            RelativeLayout.LayoutParams par2 = (RelativeLayout.LayoutParams) option2.getLayoutParams();
+            par2.width=250;
+            par2.height=130;
+            option2.setLayoutParams(par2);
+
+        }
+        if(shoess[ishoes].equals(R.drawable.basketshoes1) || shoess[ishoes].equals(R.drawable.basketshoes2) ){
+
+            RelativeLayout.LayoutParams par3 = (RelativeLayout.LayoutParams) option3.getLayoutParams();
+            par3.width=310;
+            par3.topMargin=990;
+            par3.height=110;
+            option3.setLayoutParams(par3);
+
+        }
+        option2.setBackgroundDrawable(getResources().getDrawable(shortsm[ishort]));
+        opt2 = option2.getBackground().getConstantState().toString();
+        option2.setBackgroundDrawable(getResources().getDrawable(bozshortsm[ishort]));
+        option3.setBackgroundDrawable(getResources().getDrawable(shoess[ishoes]));
+        opt3 = option3.getBackground().getConstantState().toString();
+        option3.setBackgroundDrawable(getResources().getDrawable(bozshoess[ishoes]));
 
         if(n == 0){
 
             maniqui.setBackgroundDrawable(getResources().getDrawable(R.drawable.maniquimw));
 
-            option1.setBackgroundDrawable(getResources().getDrawable(shirtsm[optionshirt]));
-            option2.setBackgroundDrawable(getResources().getDrawable(shortsm[optionshort]));
-            option3.setBackgroundDrawable(getResources().getDrawable(shoess[optionshoes]));
+            option1.setBackgroundDrawable(getResources().getDrawable(shirtsm[ishirt]));
+            opt1 = option1.getBackground().getConstantState().toString();
+            option1.setBackgroundDrawable(getResources().getDrawable(bozshirtsm[ishirt]));
 
 
             if(shirts == 0) {
@@ -193,28 +241,7 @@ public class Maniqui extends AppCompatActivity implements View.OnTouchListener,V
                 items[3].setBackgroundDrawable(getResources().getDrawable(R.drawable.shirtm2));
                 items[6].setBackgroundDrawable(getResources().getDrawable(R.drawable.shirtm1));
             }
-            if(shorts == 0) {
-                items[7].setBackgroundDrawable(getResources().getDrawable(R.drawable.shortm1));
-                items[2].setBackgroundDrawable(getResources().getDrawable(R.drawable.shortm3));
-                items[13].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshortm1));
-                items[12].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshortm2));
-                items[8].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshortm3));
 
-            }
-            if(shorts == 1) {
-                items[7].setBackgroundDrawable(getResources().getDrawable(R.drawable.shortm1));
-                items[2].setBackgroundDrawable(getResources().getDrawable(R.drawable.shortm3));
-                items[13].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshortm3));
-                items[12].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshortm2));
-                items[8].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshortm1));
-            }
-            if(shorts == 2) {
-                items[7].setBackgroundDrawable(getResources().getDrawable(R.drawable.shortm3));
-                items[2].setBackgroundDrawable(getResources().getDrawable(R.drawable.shortm1));
-                items[13].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshortm1));
-                items[12].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshortm2));
-                items[8].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshortm3));
-            }
 
 
         }else{
@@ -222,56 +249,36 @@ public class Maniqui extends AppCompatActivity implements View.OnTouchListener,V
             if(n == 1){maniqui.setBackgroundDrawable(getResources().getDrawable(R.drawable.maniquiwb));}
             if(n == 2){maniqui.setBackgroundDrawable(getResources().getDrawable(R.drawable.maniquiww));}
 
-            option1.setBackgroundDrawable(getResources().getDrawable(shirtsw[optionshirt]));
-            option2.setBackgroundDrawable(getResources().getDrawable(shortsw[optionshort]));
-            option3.setBackgroundDrawable(getResources().getDrawable(shoess[optionshoes]));
+            option1.setBackgroundDrawable(getResources().getDrawable(shirtsw[ishirt]));
+            opt1 = option1.getBackground().getConstantState().toString();
+            option1.setBackgroundDrawable(getResources().getDrawable(bozshirtsw[ishirt]));
+
 
             if(shirts == 0) {
-                items[10].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshirtw1));
-                items[11].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshirtw2));
-                items[9].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshirtw3));
+                items[10].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshirtm1));
+                items[11].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshirtm2));
+                items[9].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshirtm3));
                 items[0].setBackgroundDrawable(getResources().getDrawable(R.drawable.shirtw1));
                 items[3].setBackgroundDrawable(getResources().getDrawable(R.drawable.shirtw2));
                 items[6].setBackgroundDrawable(getResources().getDrawable(R.drawable.shirtw3));
             }
             if(shirts == 1) {
-                items[10].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshirtw2));
-                items[11].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshirtw3));
-                items[9].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshirtw1));
+                items[10].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshirtm2));
+                items[11].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshirtm3));
+                items[9].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshirtm1));
                 items[0].setBackgroundDrawable(getResources().getDrawable(R.drawable.shirtw2));
                 items[3].setBackgroundDrawable(getResources().getDrawable(R.drawable.shirtw3));
                 items[6].setBackgroundDrawable(getResources().getDrawable(R.drawable.shirtw1));
             }
             if(shirts == 2) {
-                items[10].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshirtw3));
-                items[11].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshirtw2));
-                items[9].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshirtw1));
+                items[10].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshirtm3));
+                items[11].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshirtm2));
+                items[9].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshirtm1));
                 items[0].setBackgroundDrawable(getResources().getDrawable(R.drawable.shirtw3));
                 items[3].setBackgroundDrawable(getResources().getDrawable(R.drawable.shirtw2));
                 items[6].setBackgroundDrawable(getResources().getDrawable(R.drawable.shirtw1));
             }
-            if(shorts == 0) {
-                items[7].setBackgroundDrawable(getResources().getDrawable(R.drawable.shortm1));
-                items[2].setBackgroundDrawable(getResources().getDrawable(R.drawable.shortm3));
-                items[13].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshortm1));
-                items[12].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshortm2));
-                items[8].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshortm3));
 
-            }
-            if(shorts == 1) {
-                items[7].setBackgroundDrawable(getResources().getDrawable(R.drawable.shortm1));
-                items[2].setBackgroundDrawable(getResources().getDrawable(R.drawable.shortm3));
-                items[13].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshortm3));
-                items[12].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshortm2));
-                items[8].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshortm1));
-            }
-            if(shorts == 2) {
-                items[7].setBackgroundDrawable(getResources().getDrawable(R.drawable.shortm3));
-                items[2].setBackgroundDrawable(getResources().getDrawable(R.drawable.shortm1));
-                items[13].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshortm1));
-                items[12].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshortm2));
-                items[8].setBackgroundDrawable(getResources().getDrawable(R.drawable.basketshortm3));
-            }
 
         }
 
@@ -281,24 +288,26 @@ public class Maniqui extends AppCompatActivity implements View.OnTouchListener,V
     private RelativeLayout.LayoutParams Verificar(View v, int prevX, int prevY, int firtsX, int firtsY, int temp1, RelativeLayout.LayoutParams par, String tipo){
 
 
-        String opt1 = option1.getBackground().getConstantState().toString();
-        String opt2 = option2.getBackground().getConstantState().toString();
-        String opt3 = option3.getBackground().getConstantState().toString();
+
         String temporal = v.getBackground().getConstantState().toString();
-        Log.d(msg, "top: " + par.topMargin +"");
+        Log.d(msg, "temp: " + temporal +"");
+        Log.d(msg, "opt1: " + opt1 +"");
+        Log.d(msg, "opt2: " + opt2 +"");
+        Log.d(msg, "opt3: " + opt3 +"");
 
         if(tipo == "shirt"){
 
-            if (par.topMargin < 610) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.topMargin > 800) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin < 410) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin > 600) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if (par.leftMargin > 1400) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if (par.leftMargin < 820) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0 ){
 
                 if(temporal.equals(opt1)){
 
-                    par.topMargin = 738;
+                    par.topMargin = 538;
                     par.leftMargin = 1068;
+                    option1.setVisibility(View.INVISIBLE);
                     v.setEnabled(false);
                     hits++;
 
@@ -307,14 +316,15 @@ public class Maniqui extends AppCompatActivity implements View.OnTouchListener,V
 
         }if(tipo == "shirtb"){
 
-            if (par.topMargin < 610) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.topMargin > 800) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin < 410) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin > 600) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if (par.leftMargin > 1400) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if (par.leftMargin < 820) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
                 if(temporal.equals(opt1)){
-                    par.topMargin = 738;
+                    par.topMargin = 538;
                     par.leftMargin = 1160;
+                    option1.setVisibility(View.INVISIBLE);
                     v.setEnabled(false);
                     hits++;
                 }else{par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
@@ -322,15 +332,16 @@ public class Maniqui extends AppCompatActivity implements View.OnTouchListener,V
         }
         if(tipo == "short"){
 
-            if (par.topMargin < 910) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.topMargin > 1040) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin < 710) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin > 840) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if (par.leftMargin > 1400) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if (par.leftMargin < 820) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
                 if(temporal.equals(opt2)){
 
-                    par.topMargin = 985;
-                    par.leftMargin = 1162;
+                    par.topMargin = 785;
+                    par.leftMargin = 1165;
+                    option2.setVisibility(View.INVISIBLE);
                     v.setEnabled(false);
                     hits++;
 
@@ -340,16 +351,17 @@ public class Maniqui extends AppCompatActivity implements View.OnTouchListener,V
         }
         if(tipo == "shortb"){
 
-            if (par.topMargin < 910) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.topMargin > 1040) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin < 710) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin > 840) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if (par.leftMargin > 1400) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if (par.leftMargin < 820) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
 
                 if(temporal.equals(opt2)){
 
-                    par.topMargin = 987;
-                    par.leftMargin = 1138;
+                    par.topMargin = 787;
+                    par.leftMargin = 1145;
+                    option2.setVisibility(View.INVISIBLE);
                     v.setEnabled(false);
                     hits++;
 
@@ -360,15 +372,16 @@ public class Maniqui extends AppCompatActivity implements View.OnTouchListener,V
         }
         if(tipo == "shoes"){
 
-            if (par.topMargin < 1000) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.topMargin > 1300) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin < 800) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin > 1100) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if (par.leftMargin > 1400) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if (par.leftMargin < 820) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
                 if(temporal.equals(opt3)){
 
-                    par.topMargin = 1225;
-                    par.leftMargin = 1140;
+                    par.topMargin = 1025;
+                    par.leftMargin = 1135;
+                    option3.setVisibility(View.INVISIBLE);
                     v.setEnabled(false);
                     hits++;
 
@@ -378,8 +391,8 @@ public class Maniqui extends AppCompatActivity implements View.OnTouchListener,V
         }
         if(tipo == "shoesb"){
 
-            if (par.topMargin < 1000) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.topMargin > 1300) {par.topMargin = firtsX;par.leftMargin = firtsY;
+            if (par.topMargin < 800) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin > 1100) {par.topMargin = firtsX;par.leftMargin = firtsY;
                 temp1=1;}
             if (par.leftMargin > 1400) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if (par.leftMargin < 820) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
@@ -387,8 +400,9 @@ public class Maniqui extends AppCompatActivity implements View.OnTouchListener,V
 
                 if(temporal.equals(opt3)){
 
-                    par.topMargin = 1200;
-                    par.leftMargin = 1140;
+                    par.topMargin = 995;
+                    par.leftMargin = 1143;
+                    option3.setVisibility(View.INVISIBLE);
                     v.setEnabled(false);
                     hits++;
 
@@ -439,13 +453,13 @@ public class Maniqui extends AppCompatActivity implements View.OnTouchListener,V
                 if(v == items[9] || v==items[11] || v==items[10]){
                     Verificar(v, prevX, prevY, firtsX, firtsY, 0, par, "shirtb");
                 }
-                if(v == items[1] || v==items[4] || v==items[5] ) {
+                if(v == items[1]  || v==items[5] ) {
                     Verificar(v, prevX, prevY, firtsX, firtsY, 0, par, "shoes");
                 }
                 if( v==items[14] || v==items[15] ) {
                     Verificar(v, prevX, prevY, firtsX, firtsY, 0, par, "shoesb");
                 }
-                if(v == items[2] || v==items[7] ) {
+                if(v == items[2] || v==items[7] || v==items[4]) {
                     Verificar(v, prevX, prevY, firtsX, firtsY, 0, par, "short");
                 }
                 if(v == items[8] || v==items[12] || v==items[13]) {

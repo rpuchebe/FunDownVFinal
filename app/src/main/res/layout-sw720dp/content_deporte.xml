@@ -18,11 +18,13 @@
 
     <ImageButton
         android:id="@+id/maniqui"
-        android:layout_width="250dp"
-        android:layout_height="500dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="30dp" />
+        android:layout_width="98dp"
+        android:layout_height="135dp"
+        android:background="@drawable/btncamisa"
+        android:layout_below="@+id/sonido"
+        android:layout_toEndOf="@+id/box"
+        android:layout_marginStart="240dp"
+        android:layout_marginTop="71dp" />
 
 
     <ImageButton
@@ -31,8 +33,10 @@
         android:id="@+id/box"
         android:background="@drawable/box"
         android:clickable="false"
-        android:layout_alignBottom="@+id/maniqui"
-        android:layout_marginLeft="245dp"/>
+        android:layout_marginLeft="245dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/home"
+        android:layout_marginStart="63dp" />
 
     <ImageView
         android:layout_width="80dp"

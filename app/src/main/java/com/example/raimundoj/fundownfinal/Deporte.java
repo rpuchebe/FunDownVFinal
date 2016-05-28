@@ -41,33 +41,22 @@ public class Deporte extends AppCompatActivity implements View.OnClickListener{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deporte);
-
-
         sonido = (ImageView) findViewById(R.id.sonido);
         home = (ImageView) findViewById(R.id.home);
         box=(ImageButton)findViewById(R.id.box);
         maniqui=(ImageButton)findViewById(R.id.maniqui);
-
         box.setOnClickListener(this);
         maniqui.setOnClickListener(this);
         sonido.setOnClickListener(this);
         home.setOnClickListener(this);
-
         soundOn = BitmapFactory.decodeResource(getResources(), R.drawable.btnsonidoon);
         soundOff= BitmapFactory.decodeResource(getResources(), R.drawable.btnsonidoff);
         toggle = true;
         sonido.setImageBitmap(soundOn);
-
         bgm = MediaPlayer.create(this,R.raw.background);
         bgm.start();
         bgm.setLooping(true);
-        startBackground();
         startAnimation();
-        starManiqui();
-        if(n == 0) {
-
-            maniqui.setBackgroundDrawable(getResources().getDrawable(R.drawable.maniquimw));
-        }
 
 
     }
@@ -92,7 +81,7 @@ public class Deporte extends AppCompatActivity implements View.OnClickListener{
     private void startBackground(){
 
         ImageView fondo = (ImageView)findViewById(R.id.fondo);
-        Glide.with(this).load(R.drawable.fondo6).into(fondo);
+        Glide.with(this).load(R.drawable.fondo62).into(fondo);
     }
 
     private void startAnimation(){
