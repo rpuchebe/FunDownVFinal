@@ -3,4 +3,24 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
+
+    // Play button
+    <dimen name="tooltip_width">80dp</dimen>
+    <dimen name="tooltip_height">35dp</dimen>
+    <dimen name="tooltip_margin_bottom">280dp</dimen>
+
+    //Ropa
+    <dimen name="shirt_width">210dp</dimen>
+    <dimen name="shirt_height">130dp</dimen>
+    <dimen name="short_width">115dp</dimen>
+    <dimen name="short_height">80dp</dimen>
+    <dimen name="shoes_width">150dp</dimen>
+    <dimen name="shoes_height">50dp</dimen>
+    <dimen name="basketshirt_width">130dp</dimen>
+    <dimen name="basketshirt_height">150dp</dimen>
+    <dimen name="basketshort_width">140dp</dimen>
+    <dimen name="basketshort_height">100dp</dimen>
+    <dimen name="basketshoes_width">170dp</dimen>
+    <dimen name="basketshoes_height">50dp</dimen>
+
 </resources>

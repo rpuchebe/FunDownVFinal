@@ -20,7 +20,7 @@ import android.widget.Toast;
 
 import java.util.Random;
 
-public class Box extends AppCompatActivity implements View.OnTouchListener,View.OnClickListener {
+public class Box extends Animaciones implements View.OnTouchListener,View.OnClickListener {
 
     private static final String msg = "LogsAndroid";
     ImageButton box;
@@ -90,7 +90,6 @@ public class Box extends AppCompatActivity implements View.OnTouchListener,View.
             items[i].setVisibility(View.INVISIBLE);
             items[i].setEnabled(false);
 
-
         }
         for(int i=0;i <=33; i++){
 
@@ -99,15 +98,10 @@ public class Box extends AppCompatActivity implements View.OnTouchListener,View.
                 orden[random]=i;
             }else{i--;}
 
-
         }
 
-
-
-
         //<---------------------Sonido------------------------>
-        Intent intent =getIntent();
-        Bundle extras = intent.getExtras();
+
         sonido = (ImageView) findViewById(R.id.sonido);
         home = (ImageView) findViewById(R.id.home);
         soundOn = BitmapFactory.decodeResource(getResources(), R.drawable.btnsonidoon);
@@ -124,47 +118,90 @@ public class Box extends AppCompatActivity implements View.OnTouchListener,View.
 
     }
 
+
+
     final void SetImagenes(){
 
+        //Item1
         RelativeLayout.LayoutParams par1 = (RelativeLayout.LayoutParams) items[orden[0+rep]].getLayoutParams();
         items[orden[0+rep]].setVisibility(View.VISIBLE);
         items[orden[0+rep]].setEnabled(true);
-          par1.topMargin=1050;
-          par1.leftMargin=850;
-          items[orden[0+rep]].setLayoutParams(par1);
 
+        if(orden[0+rep]>19){par1.leftMargin=850;}
+        else{par1.leftMargin=800;}
+
+        par1.topMargin=1150;
+        items[orden[0+rep]].setLayoutParams(par1);
+
+        //Item2
         RelativeLayout.LayoutParams par2 = (RelativeLayout.LayoutParams) items[orden[1+rep]].getLayoutParams();
         items[orden[1+rep]].setVisibility(View.VISIBLE);
         items[orden[1+rep]].setEnabled(true);
-          par2.topMargin=1050;
-          par2.leftMargin=1100;
+        if(orden[1+rep]>19){
+
+            par2.leftMargin=1200;
+
+        }else{
+
+            par2.leftMargin=1150;
+
+        }
+
+        par2.topMargin=1150;
         items[orden[1+rep]].setLayoutParams(par2);
 
         RelativeLayout.LayoutParams par3 = (RelativeLayout.LayoutParams) items[orden[2+rep]].getLayoutParams();
         items[orden[2+rep]].setVisibility(View.VISIBLE);
         items[orden[2+rep]].setEnabled(true);
-          par3.topMargin=1050;
-          par3.leftMargin=1500;
+        if(orden[2+rep]>19){
+
+            par3.leftMargin=1550;
+
+        }else{
+
+            par3.leftMargin=1500;
+
+        }
+
+        par3.topMargin=1150;
         items[orden[2+rep]].setLayoutParams(par3);
 
         RelativeLayout.LayoutParams par4 = (RelativeLayout.LayoutParams) items[orden[3+rep]].getLayoutParams();
         items[orden[3+rep]].setVisibility(View.VISIBLE);
         items[orden[3+rep]].setEnabled(true);
-          par4.topMargin=1050;
-          par4.leftMargin=1800;
+        if(orden[3+rep]>19){
+
+            par4.leftMargin=1850;
+
+        }else{
+
+            par4.leftMargin=1800;
+
+        }
+
+        par4.topMargin=1150;
         items[orden[3+rep]].setLayoutParams(par4);
-        if(rep!=6){
+        if(rep!=5){
 
             RelativeLayout.LayoutParams par5 = (RelativeLayout.LayoutParams) items[orden[4+rep]].getLayoutParams();
             items[orden[4 + rep]].setVisibility(View.VISIBLE);
             items[orden[4+rep]].setEnabled(true);
-            par5.topMargin=1050;
-            par5.leftMargin=2100;
+            if(orden[4+rep]>19){
+
+                par5.leftMargin=2250;
+
+            }else{
+
+                par5.leftMargin=2200;
+
+            }
+
+
+            par5.topMargin=1150;
+
             items[orden[4+rep]].setLayoutParams(par5);
 
         }
-
-
 
     }
 
@@ -195,51 +232,43 @@ public class Box extends AppCompatActivity implements View.OnTouchListener,View.
                 par.topMargin += (int) event.getRawY() - prevY;
                 par.leftMargin += (int) event.getRawX() - prevX;
 
-                if(v == items[0]  || v == items[1] || v == items[2] ){
-                    Verificar(v, prevX, prevY, firtsX, firtsY, 0, par, "shirtmen");
+                if(v == items[0]  || v == items[1] || v == items[2] || v == items[9]  || v == items[10] || v == items[11] ){
+                    Verificar(v, prevX, prevY, firtsX, firtsY, 0, par, "shirt");
 
                 }
-                if(v == items[3]  || v == items[4] || v == items[5] ) {
+                if(v == items[3]  || v == items[4] || v == items[5] || v == items[12]  || v == items[13] || v == items[14]) {
 
-                    Verificar(v, prevX, prevY, firtsX, firtsY, 0, par, "shortmen");
+                    Verificar(v, prevX, prevY, firtsX, firtsY, 0, par, "short");
 
                 }
                 if(v == items[6]  || v == items[7] || v == items[8] ) {
 
-                    Verificar(v, prevX, prevY, firtsX, firtsY, 0, par, "shoesmen");
+                    Verificar(v, prevX, prevY, firtsX, firtsY, 0, par, "shoes");
 
                 }
-                if(v == items[9]  || v == items[10] || v == items[11] ) {
-
-                    Verificar(v, prevX, prevY, firtsX, firtsY, 0, par, "shirtw");
-
-                }if(v == items[12]  || v == items[13] || v == items[14] ) {
-
-                    Verificar(v, prevX, prevY, firtsX, firtsY, 0, par, "shortw");
-
-                }if(v == items[15]  || v == items[16] || v == items[17] || v == items[18]  ) {
+                if(v == items[15]  || v == items[16] || v == items[17] || v == items[18]  ) {
 
                     Verificar(v, prevX, prevY, firtsX, firtsY, 0, par, "basketshoes");
 
-                }if(v == items[19]  || v == items[20] || v == items[21] ) {
+                }if(v == items[19]  || v == items[20] || v == items[21] || v == items[25]  || v == items[26] || v == items[27] ) {
 
-                    Verificar(v, prevX, prevY, firtsX, firtsY, 0, par, "basketshirtm");
+                    Verificar(v, prevX, prevY, firtsX, firtsY, 0, par, "basketshirt");
 
-                }if(v == items[22]  || v == items[23] || v == items[24] ) {
+                }if(v == items[22]  || v == items[23] || v == items[24] || v == items[28]  || v == items[29] || v == items[30] ) {
 
-                    Verificar(v, prevX, prevY, firtsX, firtsY, 0, par, "basketshortm");
+                    Verificar(v, prevX, prevY, firtsX, firtsY, 0, par, "basketshort");
 
-                }if(v == items[25]  || v == items[26] || v == items[27] ) {
+                }if(v == items[31] ) {
 
-                    Verificar(v, prevX, prevY, firtsX, firtsY, 0, par, "basketshirtw");
+                    Verificar(v, prevX, prevY, firtsX, firtsY, 0, par, "ball1");
 
-                }if(v == items[28]  || v == items[29] || v == items[30] ) {
+                }if( v == items[32] ) {
 
-                    Verificar(v, prevX, prevY, firtsX, firtsY, 0, par, "basketshortw");
+                    Verificar(v, prevX, prevY, firtsX, firtsY, 0, par, "ball2");
 
-                }if(v == items[31]  || v == items[32] || v == items[33] ) {
+                }if(v == items[33] ) {
 
-                    Verificar(v, prevX, prevY, firtsX, firtsY, 0, par, "ball");
+                    Verificar(v, prevX, prevY, firtsX, firtsY, 0, par, "ball3");
 
                 }
 
@@ -277,143 +306,117 @@ public class Box extends AppCompatActivity implements View.OnTouchListener,View.
 
         Log.d(msg,"Item:"+ tipo + "____Top:" + par.topMargin + "____Left :"+ par.leftMargin);
 
-        if(tipo == "shirtmen"){
+        if(tipo == "shirt"){
 
-            if (par.topMargin < 180) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.topMargin > 430) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin < 0) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin > 280) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin < 350) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin > 700) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin < 75) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin > 480) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
-                par.topMargin = 320;
+                par.topMargin = 580;
                 par.leftMargin = 150;
                 v.setEnabled(false);
                 hits++;
 
             }
         }
-        if(tipo == "shortmen"){
+        if(tipo == "short"){
 
-            if (par.topMargin < 240) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.topMargin > 440) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin < 460) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin > 685) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin < 350) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin > 700) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin < 660) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin > 985) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
-                par.topMargin = 360;
-                par.leftMargin = 640;
+                par.topMargin = 580;
+                par.leftMargin = 800;
                 v.setEnabled(false);
                 hits++;}
         }
-        if(tipo == "shoesmen"){
 
-            if (par.topMargin < 190) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.topMargin > 400) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin < 1710) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin > 1850) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if(temp1==0){
-                par.topMargin = 320;
-                par.leftMargin = 1820;
-                v.setEnabled(false);
-                hits++;
-            }
-        }
-        if(tipo == "basketshirtm"){
+        if(tipo == "basketshirt"){
 
-            if (par.topMargin < 225) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.topMargin > 450) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin < 890) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin > 1090) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin < 350) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin > 700) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin < 1220) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin > 1520) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
-                par.topMargin = 317;
-                par.leftMargin = 1050;
+                par.topMargin = 580;
+                par.leftMargin = 1300;
                 v.setEnabled(false);
                 hits++;}
 
         }
-        if(tipo == "basketshortm"){
+        if(tipo == "basketshort"){
 
-            if (par.topMargin < 260) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.topMargin > 430) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin < 1250) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin > 1500) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin < 350) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin > 700) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin < 1730) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin > 2070) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
-                par.topMargin = 320;
-                par.leftMargin = 1410;
+                par.topMargin = 580;
+                par.leftMargin = 1810;
                 v.setEnabled(false);
                 hits++;}
         }
         if(tipo == "basketshoes"){
 
-            if (par.topMargin < 600) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.topMargin > 800) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin < 1680) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin > 1880) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin < 100) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin > 250) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin < 280) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin > 520) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
-                par.topMargin = 715;
-                par.leftMargin = 1775;
+                par.topMargin = 120;
+                par.leftMargin = 300;
                 v.setEnabled(false);
                 hits++;}
         }
-        if(tipo == "shirtw"){
+        if(tipo == "shoes"){
 
-            if (par.topMargin < 600) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.topMargin > 800) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin < 0) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin > 280) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin < 100) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin > 250) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin < 700) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin > 950) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
-                par.topMargin = 715;
-                par.leftMargin = 150;
+                par.topMargin = 120;
+                par.leftMargin = 820;
                 v.setEnabled(false);
-                hits++;}
-
-        }
-        if(tipo == "shortw"){
-
-            if (par.topMargin < 600) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.topMargin > 800) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin < 460) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin > 685) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if(temp1==0){
-                par.topMargin = 715;
-                par.leftMargin = 640;
-                v.setEnabled(false);
-                hits++;}
+                hits++;
+            }
         }
 
-        if(tipo == "basketshirtw"){
+        if(tipo == "ball1"){
 
-            if (par.topMargin < 600) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.topMargin > 800) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin < 890) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin > 1090) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin < 0) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin > 160) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin < 1300) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin > 1450) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
-                par.topMargin = 715;
-                par.leftMargin = 1050;
-                v.setEnabled(false);
-                hits++;}
-
-        }
-        if(tipo == "basketshortw"){
-
-            if (par.topMargin < 600) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.topMargin > 800) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin < 1250) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin > 1500) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if(temp1==0){
-                par.topMargin = 690;
-                par.leftMargin = 1445;
+                par.topMargin = 60;
+                par.leftMargin = 1460;
                 v.setEnabled(false);
                 hits++;}
         }
+        if(tipo == "ball2"){
 
-        if(tipo == "ball"){
-
-            if (par.topMargin < 380) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.topMargin > 635) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin < 2020) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin > 2280) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin < 0) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin > 160) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin < 1050) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin > 1250) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
-                par.topMargin = 500;
-                par.leftMargin = 2160;
+                par.topMargin = 55;
+                par.leftMargin = 1160;
+                v.setEnabled(false);
+                hits++;}
+        }
+        if(tipo == "ball3"){
+
+            if (par.topMargin < 0) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin > 160) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin < 1600) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin > 1850) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if(temp1==0){
+                par.topMargin = 55;
+                par.leftMargin = 1760;
                 v.setEnabled(false);
                 hits++;}
         }
@@ -431,20 +434,6 @@ public class Box extends AppCompatActivity implements View.OnTouchListener,View.
     public void onClick(View v) {
 
         switch (v.getId()){
-
-            case R.id.sonido:
-
-                if(toggle){
-                    bgm.pause();
-                    toggle = false;
-                    sonido.setImageBitmap(soundOff);
-                }else{
-                    bgm.start();
-                    toggle = true;
-                    sonido.setImageBitmap(soundOn);
-                }
-
-                break;
 
 
             case R.id.home:

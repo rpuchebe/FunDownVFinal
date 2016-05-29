@@ -155,126 +155,125 @@
 
 
     <ImageView
-        android:layout_width="210dp"
-        android:layout_height="130dp"
+        android:layout_width="@dimen/shirt_width"
+        android:layout_height="@dimen/shirt_height"
         android:id="@+id/item1"
         android:layout_marginTop="145dp"
         android:layout_marginLeft="25dp"/>
 
 
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/shoes_width"
+        android:layout_height="@dimen/shoes_height"
         android:id="@+id/item2"
         android:layout_marginTop="650dp"
         android:layout_marginLeft="55dp"
         />
 
     <ImageView
-        android:layout_width="115dp"
-        android:layout_height="80dp"
+        android:layout_width="@dimen/short_width"
+        android:layout_height="@dimen/short_height"
         android:id="@+id/item3"
         android:layout_marginLeft="73dp"
         android:layout_marginTop="320dp"
          />
 
-
     <ImageView
-        android:layout_width="210dp"
-        android:layout_height="130dp"
+        android:layout_width="@dimen/shirt_width"
+        android:layout_height="@dimen/shirt_height"
         android:id="@+id/item4"
         android:layout_marginTop="465dp"
         android:layout_marginLeft="25dp"/>
 
     <ImageView
-        android:layout_width="243px"
-        android:layout_height="160px"
+        android:layout_width="@dimen/short_width"
+        android:layout_height="@dimen/short_height"
         android:id="@+id/item5"
         android:layout_marginLeft="285dp"
         android:layout_marginTop="165dp"
         />
 
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="50dp"
+        android:layout_width="@dimen/shoes_width"
+        android:layout_height="@dimen/shoes_height"
         android:id="@+id/item6"
         android:layout_marginLeft="265dp"
         android:layout_marginTop="650dp"
         />
 
     <ImageView
-        android:layout_width="210dp"
-        android:layout_height="130dp"
+        android:layout_width="@dimen/shirt_width"
+        android:layout_height="@dimen/shirt_height"
         android:id="@+id/item7"
         android:layout_marginLeft="480px"
         android:layout_marginTop="600px"
         />
 
     <ImageView
-        android:layout_width="115dp"
-        android:layout_height="80dp"
+        android:layout_width="@dimen/short_width"
+        android:layout_height="@dimen/short_height"
         android:id="@+id/item8"
         android:layout_marginLeft="289dp"
         android:layout_marginTop="480dp"
         />
 
     <ImageView
-        android:layout_width="140dp"
-        android:layout_height="100dp"
+        android:layout_width="@dimen/basketshort_width"
+        android:layout_height="@dimen/basketshort_height"
         android:id="@+id/item9"
         android:layout_marginLeft="865dp"
         android:layout_marginTop="470dp"
         />
 
     <ImageView
-        android:layout_width="130dp"
-        android:layout_height="150dp"
+        android:layout_width="@dimen/basketshirt_width"
+        android:layout_height="@dimen/basketshirt_height"
         android:id="@+id/item10"
         android:layout_marginLeft="1085dp"
         android:layout_marginTop="465dp"
         />
 
     <ImageView
-        android:layout_width="130dp"
-        android:layout_height="150dp"
+        android:layout_width="@dimen/basketshirt_width"
+        android:layout_height="@dimen/basketshirt_height"
         android:id="@+id/item11"
         android:layout_marginLeft="868dp"
         android:layout_marginTop="305dp"
         />
 
     <ImageView
-        android:layout_width="130dp"
-        android:layout_height="150dp"
+        android:layout_width="@dimen/basketshirt_width"
+        android:layout_height="@dimen/basketshirt_height"
         android:id="@+id/item12"
         android:layout_marginLeft="1085dp"
         android:layout_marginTop="150dp"
         />
 
     <ImageView
-        android:layout_width="140dp"
-        android:layout_height="100dp"
+        android:layout_width="@dimen/basketshort_width"
+        android:layout_height="@dimen/basketshort_height"
         android:id="@+id/item13"
         android:layout_marginLeft="1085dp"
         android:layout_marginTop="310dp" />
 
     <ImageView
-        android:layout_width="140dp"
-        android:layout_height="100dp"
+        android:layout_width="@dimen/basketshort_width"
+        android:layout_height="@dimen/basketshort_height"
         android:id="@+id/item14"
         android:layout_marginLeft="865dp"
         android:layout_marginTop="150dp" />
 
     <ImageView
-        android:layout_width="300px"
-        android:layout_height="100px"
+        android:layout_width="@dimen/basketshoes_width"
+        android:layout_height="@dimen/basketshoes_height"
         android:id="@+id/item15"
         android:layout_marginLeft="2150px"
         android:layout_marginTop="1250px"
         />
 
     <ImageView
-        android:layout_width="300px"
-        android:layout_height="100px"
+        android:layout_width="@dimen/basketshoes_width"
+        android:layout_height="@dimen/basketshoes_height"
         android:id="@+id/item16"
         android:layout_marginLeft="865dp"
         android:layout_marginTop="1250px"
@@ -316,8 +315,6 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp"
         android:layout_centerHorizontal="true" />
-
-
 
 
 

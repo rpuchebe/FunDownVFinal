@@ -2,53 +2,74 @@ package com.example.raimundoj.fundownfinal;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends Animaciones implements View.OnClickListener {
 
-    Button boton;
+    ImageButton avatar1;
+    ImageButton avatar2;
+    ImageButton avatar3;
+    ImageView mTooltip1;
+    ImageView mTooltip2;
+    ImageView mTooltip3;
+    ImageView mStartButtonLights1;
+    ImageView mStartButtonLights2;
+    ImageView mStartButtonLights3;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        boton=(Button)findViewById(R.id.button);
-        boton.setOnClickListener(this);
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
+        //ImageButton
+        avatar1 =(ImageButton)findViewById(R.id.avatar1);
+        avatar2 =(ImageButton)findViewById(R.id.avatar2);
+        avatar3 =(ImageButton)findViewById(R.id.avatar3);
+
+        //ImageView
+        mTooltip1 =(ImageView)findViewById(R.id.tooltip1);
+        mTooltip2 =(ImageView)findViewById(R.id.tooltip2);
+        mTooltip3 =(ImageView)findViewById(R.id.tooltip3);
+
+        //Referenciando
+        mStartButtonLights1 = (ImageView) findViewById(R.id.start_game_button_lights1);
+        mStartButtonLights2 = (ImageView) findViewById(R.id.start_game_button_lights2);
+        mStartButtonLights3 = (ImageView) findViewById(R.id.start_game_button_lights3);
+
+        //Onclick
+        avatar1.setOnClickListener(this);
+        avatar2.setOnClickListener(this);
+        avatar3.setOnClickListener(this);
+
+        //Animacion de Play
+        startTootipAnimation(mTooltip1);
+        startTootipAnimation(mTooltip2);
+        startTootipAnimation(mTooltip3);
+
+        //Animacion de estrella
+        startLightsAnimation(mStartButtonLights1);
+        startLightsAnimation(mStartButtonLights2);
+        startLightsAnimation(mStartButtonLights3);
+
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
+        int id = item.getItemId();
         if (id == R.id.action_settings) {
             return true;
         }
@@ -56,14 +77,35 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return super.onOptionsItemSelected(item);
     }
 
+
     @Override
     public void onClick(View v) {
 
         switch (v.getId()){
 
-            case R.id.button:
+            case R.id.avatar1:
 
                 Intent intent = new Intent(MainActivity.this, Deporte.class);
+                int avatar = 1;
+                intent.putExtra("Avatar", avatar);
+                startActivity(intent);
+
+                break;
+
+            case R.id.avatar2:
+
+                intent = new Intent(MainActivity.this, Deporte.class);
+                avatar = 2;
+                intent.putExtra("Avatar", avatar);
+                startActivity(intent);
+
+                break;
+
+            case R.id.avatar3:
+
+                intent = new Intent(MainActivity.this, Deporte.class);
+                avatar = 3;
+                intent.putExtra("Avatar", avatar);
                 startActivity(intent);
 
                 break;

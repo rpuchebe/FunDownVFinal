@@ -16,7 +16,7 @@ import android.widget.Toast;
 
 import java.util.Random;
 
-public class Maniqui extends AppCompatActivity implements View.OnTouchListener,View.OnClickListener{
+public class Maniqui extends Animaciones implements View.OnTouchListener,View.OnClickListener{
 
     private static final String msg = "LogsAndroid";
     int hits = 0;
@@ -26,15 +26,12 @@ public class Maniqui extends AppCompatActivity implements View.OnTouchListener,V
     ImageView option3;
     ImageView maniqui;
     int prevX, prevY, firtsX, firtsY;
-    //Variables Sonido
     ImageView home;
     MediaPlayer bgm;
     ImageView sonido;
     Bitmap soundOn;
     Bitmap soundOff;
     boolean toggle;
-    //Fin variables sonido
-
     Random rand = new Random();
     int optionshirt = rand.nextInt(6);
     int optionshort = rand.nextInt(6);
@@ -130,7 +127,6 @@ public class Maniqui extends AppCompatActivity implements View.OnTouchListener,V
         super.onPause();
         bgm.release();
     }
-
 
     final void SetManiqui(){
 
@@ -401,7 +397,7 @@ public class Maniqui extends AppCompatActivity implements View.OnTouchListener,V
                 if(temporal.equals(opt3)){
 
                     par.topMargin = 995;
-                    par.leftMargin = 1143;
+                    par.leftMargin = 1115;
                     option3.setVisibility(View.INVISIBLE);
                     v.setEnabled(false);
                     hits++;

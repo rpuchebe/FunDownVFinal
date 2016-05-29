@@ -8,7 +8,6 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.raimundoj.fundownfinal.MainActivity"
     tools:showIn="@layout/activity_main">
 
@@ -20,14 +19,93 @@
         android:layout_centerHorizontal="true"
         android:id="@+id/textView" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/start_game_button_lights1"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/button_start_lights"/>
+
+    <ImageButton
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:text="Ingresar"
-        android:id="@+id/button"
+        android:id="@+id/avatar2"
+        android:background="@drawable/iavatar1"
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="43dp" />
 
+    <ImageView
+        android:id="@+id/start_game_button_lights2"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_alignParentBottom="true"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/button_start_lights"/>
+
+    <ImageButton
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/avatar1"
+        android:background="@drawable/iavatar2"
+        android:layout_below="@+id/textView"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="43dp" />
+
+    <ImageView
+        android:id="@+id/start_game_button_lights3"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_alignParentBottom="true"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/button_start_lights"/>
+
+    <ImageButton
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/avatar3"
+        android:background="@drawable/iavatar3"
+        android:layout_below="@+id/textView"
+        android:layout_marginLeft="850dp"
+        android:layout_marginTop="43dp" />
+    <ImageView
+        android:id="@+id/tooltip1"
+        android:layout_width="@dimen/tooltip_width"
+        android:layout_height="@dimen/tooltip_height"
+        android:adjustViewBounds="true"
+        android:layout_marginLeft="150dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/tooltip_play"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/tooltip_margin_bottom"/>
+
+    <ImageView
+        android:id="@+id/tooltip2"
+        android:layout_width="@dimen/tooltip_width"
+        android:layout_height="@dimen/tooltip_height"
+        android:adjustViewBounds="true"
+        android:layout_marginLeft="630dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/tooltip_play"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/tooltip_margin_bottom"/>
+
+    <ImageView
+        android:id="@+id/tooltip3"
+        android:layout_width="@dimen/tooltip_width"
+        android:layout_height="@dimen/tooltip_height"
+        android:adjustViewBounds="true"
+        android:layout_marginLeft="1080dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/tooltip_play"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/tooltip_margin_bottom"/>
 
 </RelativeLayout>
