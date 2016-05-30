@@ -18,33 +18,40 @@ import java.util.Random;
 
 public class Maniqui extends Animaciones implements View.OnTouchListener,View.OnClickListener{
 
+    //Log
     private static final String msg = "LogsAndroid";
-    int hits = 0;
-    Button boton;
-    ImageView option1;
-    ImageView option2;
-    ImageView option3;
+
+
+    //Maniqui
     ImageView maniqui;
+
+
+    //Posiciones
     int prevX, prevY, firtsX, firtsY;
+
+    //Botones De inicio
     ImageView home;
     MediaPlayer bgm;
     ImageView sonido;
     Bitmap soundOn;
     Bitmap soundOff;
     boolean toggle;
+
+    //Ramdom
     Random rand = new Random();
     int optionshirt = rand.nextInt(6);
     int optionshort = rand.nextInt(6);
     int optionshoes = rand.nextInt(4);
-    private ImageView items[] = new ImageView[16];
-    private Integer[] background = new Integer[16];
-    private String[] valores = new String[32];
     int shirts = rand.nextInt(3);
     int shorts = rand.nextInt(3);
-    String opt1;
-    String opt2;
-    String opt3;
 
+    //Items
+    private ImageView items[] = new ImageView[16];
+
+    String opt1,opt2,opt3;
+
+
+    //Ropa
     private Integer[] shirtsm = { R.drawable.shirtm1, R.drawable.shirtm2,
             R.drawable.shirtm3, R.drawable.basketshirtm1, R.drawable.basketshirtm2,R.drawable.basketshirtm3, };
 
@@ -63,10 +70,11 @@ public class Maniqui extends Animaciones implements View.OnTouchListener,View.On
     private Integer[] bozshortsm = { R.drawable.bozshortm1,R.drawable.bozshortm2,
             R.drawable.bozshortm3, R.drawable.bozbasketshortm1, R.drawable.bozbasketshortm2,R.drawable.bozbasketshortm3, };
 
-
     private Integer[] shoess = { R.drawable.shoes3, R.drawable.shoes2,R.drawable.basketshoes2,R.drawable.basketshoes1 };
 
     private Integer[] bozshoess = { R.drawable.bozshoes3, R.drawable.bozshoes2,R.drawable.bozbasketshoes2,R.drawable.bozbasketshoes1 };
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,16 +100,34 @@ public class Maniqui extends Animaciones implements View.OnTouchListener,View.On
         items[14]=(ImageView)findViewById(R.id.item15);
         items[15]=(ImageView)findViewById(R.id.item16);
         maniqui=(ImageView)findViewById(R.id.maniqui);
-        boton=(Button)findViewById(R.id.button2);
+        star1=(ImageView)findViewById(R.id.star1);
+        star2=(ImageView)findViewById(R.id.star2);
+        star3=(ImageView)findViewById(R.id.star3);
+        again=(ImageView)findViewById(R.id.again);
+        back=(ImageView)findViewById(R.id.back);
+        popup=(ImageView)findViewById(R.id.popup);
+
+
+        //Coloca las imagenes
         SetManiqui();
-        boton.setOnClickListener(this);
+
+        //OnClick
+        again.setOnClickListener(this);
+        back.setOnClickListener(this);
         for(int i=0;i <=15; i++){
 
             items[i].setOnTouchListener(this);
 
         }
 
-        boton.setVisibility(View.INVISIBLE);
+        //Ocultar
+
+        star1.setVisibility(View.GONE);
+        star2.setVisibility(View.GONE);
+        star3.setVisibility(View.GONE);
+        again.setVisibility(View.GONE);
+        back.setVisibility(View.GONE);
+        popup.setVisibility(View.GONE);
 
         //<---------------------Sonido------------------------>
         sonido = (ImageView) findViewById(R.id.sonido);
@@ -280,10 +306,7 @@ public class Maniqui extends Animaciones implements View.OnTouchListener,View.On
 
     }
 
-
     private RelativeLayout.LayoutParams Verificar(View v, int prevX, int prevY, int firtsX, int firtsY, int temp1, RelativeLayout.LayoutParams par, String tipo){
-
-
 
         String temporal = v.getBackground().getConstantState().toString();
         Log.d(msg, "temp: " + temporal +"");
@@ -306,6 +329,7 @@ public class Maniqui extends Animaciones implements View.OnTouchListener,View.On
                     option1.setVisibility(View.INVISIBLE);
                     v.setEnabled(false);
                     hits++;
+                    gameWon(hits);
 
                 }else{par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             }
@@ -323,6 +347,8 @@ public class Maniqui extends Animaciones implements View.OnTouchListener,View.On
                     option1.setVisibility(View.INVISIBLE);
                     v.setEnabled(false);
                     hits++;
+                    gameWon(hits);
+
                 }else{par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             }
         }
@@ -340,6 +366,7 @@ public class Maniqui extends Animaciones implements View.OnTouchListener,View.On
                     option2.setVisibility(View.INVISIBLE);
                     v.setEnabled(false);
                     hits++;
+                    gameWon(hits);
 
                 }else{par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
 
@@ -360,6 +387,7 @@ public class Maniqui extends Animaciones implements View.OnTouchListener,View.On
                     option2.setVisibility(View.INVISIBLE);
                     v.setEnabled(false);
                     hits++;
+                    gameWon(hits);
 
                 }else{par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
 
@@ -380,6 +408,7 @@ public class Maniqui extends Animaciones implements View.OnTouchListener,View.On
                     option3.setVisibility(View.INVISIBLE);
                     v.setEnabled(false);
                     hits++;
+                    gameWon(hits);
 
                 }else{par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
 
@@ -401,6 +430,7 @@ public class Maniqui extends Animaciones implements View.OnTouchListener,View.On
                     option3.setVisibility(View.INVISIBLE);
                     v.setEnabled(false);
                     hits++;
+                    gameWon(hits);
 
                 }else{par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
 
@@ -408,15 +438,8 @@ public class Maniqui extends Animaciones implements View.OnTouchListener,View.On
             }
         }
 
-        if(hits == 3){
-
-            Toast.makeText(getApplicationContext(), "Felicitaciones Ganaste !",
-                    Toast.LENGTH_LONG).show();
-            boton.setVisibility(View.VISIBLE);
-        }
         return par;
     }
-
 
     public void onBackPressed() {
 
@@ -508,9 +531,15 @@ public class Maniqui extends Animaciones implements View.OnTouchListener,View.On
 
                 break;
 
-            case R.id.button2:
+            case R.id.again:
 
                 intent = new Intent(Maniqui.this, Maniqui.class);
+                startActivity(intent);
+                break;
+
+            case R.id.back:
+
+                intent = new Intent(Maniqui.this, Deporte.class);
                 startActivity(intent);
 
                 break;

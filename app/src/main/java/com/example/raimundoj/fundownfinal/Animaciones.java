@@ -34,6 +34,18 @@ import com.daimajia.androidanimations.library.YoYo;
 public class Animaciones extends AppCompatActivity {
 
 
+    //Puntaje
+    int hits = 0;
+
+    //Bozquejo y star
+    ImageView option1,option2,option3;
+    ImageView star1,star2,star3;
+    ImageView back;
+    ImageView again;
+    ImageView popup;
+
+
+
     private boolean mSoundState = false;
     SharedPreferences appPreferences;
 
@@ -210,7 +222,74 @@ public class Animaciones extends AppCompatActivity {
 
     }
 
+    public void gameWon(int hits){
+
+
+        switch (hits) {
+            case 1:
+                star1.setVisibility(View.VISIBLE);
+                star1.setAlpha(0f);
+                animateStar(star1, 200);
+                Sonidos(R.raw.star);
+                break;
+            case 2:
+                star2.setVisibility(View.VISIBLE);
+                star2.setAlpha(0f);
+                animateStar(star2, 200);
+                Sonidos(R.raw.star);
+                break;
+            case 3:
+                star3.setVisibility(View.VISIBLE);
+                star3.setAlpha(0f);
+                animateStar(star3, 200);
+                Sonidos(R.raw.star);
+                popup.setVisibility(View.VISIBLE);
+                popup.setAlpha(0f);
+                animateStar(popup, 500);
+                again.setVisibility(View.VISIBLE);
+                again.setAlpha(0f);
+                animateStar(again, 600);
+                back.setVisibility(View.VISIBLE);
+                back.setAlpha(0f);
+                animateStar(back, 600);
+                break;
+        }
+
+    }
+
+    private void animateStar(final View view, int delay) {
+        ObjectAnimator alpha = ObjectAnimator.ofFloat(view, "alpha", 0, 1f);
+        alpha.setDuration(100);
+        ObjectAnimator scaleX = ObjectAnimator.ofFloat(view, "scaleX", 0, 1f);
+        ObjectAnimator scaleY = ObjectAnimator.ofFloat(view, "scaleY", 0, 1f);
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.playTogether(alpha, scaleX, scaleY);
+        animatorSet.setInterpolator(new BounceInterpolator());
+        animatorSet.setStartDelay(delay);
+        animatorSet.setDuration(600);
+        view.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+        animatorSet.start();
+
+
+    }
+
+    public void Sonidos(int Sonido){
+
+                MediaPlayer mp = MediaPlayer.create(this,Sonido);
+                mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        mp.reset();
+                        mp.release();
+                        mp = null;
+                    }
+
+                });
+                mp.start();
+
+        }
+
+    }
 
 
 
-}

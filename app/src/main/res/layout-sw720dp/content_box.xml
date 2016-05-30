@@ -35,6 +35,201 @@
         />
 
     <ImageView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:id="@+id/gancho1"
+        android:background="@drawable/gancho"
+        android:layout_marginTop="270dp"
+        android:layout_marginLeft="50dp"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:id="@+id/gancho2"
+        android:background="@drawable/gancho"
+        android:layout_marginTop="270dp"
+        android:layout_marginLeft="80dp"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:id="@+id/gancho3"
+        android:background="@drawable/gancho"
+        android:layout_marginTop="270dp"
+        android:layout_marginLeft="110dp"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:id="@+id/gancho4"
+        android:background="@drawable/gancho"
+        android:layout_marginTop="270dp"
+        android:layout_marginLeft="140dp"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:id="@+id/gancho5"
+        android:background="@drawable/gancho"
+        android:layout_marginTop="270dp"
+        android:layout_marginLeft="170dp"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:id="@+id/gancho6"
+        android:background="@drawable/gancho"
+        android:layout_marginTop="270dp"
+        android:layout_marginLeft="200dp"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:id="@+id/gancho7"
+        android:background="@drawable/gancho"
+        android:layout_marginTop="270dp"
+        android:layout_marginLeft="380dp"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:id="@+id/gancho8"
+        android:background="@drawable/gancho"
+        android:layout_marginTop="270dp"
+        android:layout_marginLeft="400dp"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:id="@+id/gancho9"
+        android:background="@drawable/gancho"
+        android:layout_marginTop="270dp"
+        android:layout_marginLeft="420dp"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:id="@+id/gancho10"
+        android:background="@drawable/gancho"
+        android:layout_marginTop="270dp"
+        android:layout_marginLeft="440dp"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:id="@+id/gancho11"
+        android:background="@drawable/gancho"
+        android:layout_marginTop="270dp"
+        android:layout_marginLeft="460dp"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:id="@+id/gancho12"
+        android:background="@drawable/gancho"
+        android:layout_marginTop="270dp"
+        android:layout_marginLeft="480dp"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:id="@+id/gancho13"
+        android:background="@drawable/gancho"
+        android:layout_marginTop="270dp"
+        android:layout_marginLeft="650dp"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:id="@+id/gancho14"
+        android:background="@drawable/gancho"
+        android:layout_marginTop="270dp"
+        android:layout_marginLeft="680dp"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:id="@+id/gancho15"
+        android:background="@drawable/gancho"
+        android:layout_marginTop="270dp"
+        android:layout_marginLeft="710dp"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:id="@+id/gancho16"
+        android:background="@drawable/gancho"
+        android:layout_marginTop="270dp"
+        android:layout_marginLeft="740dp"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:id="@+id/gancho17"
+        android:background="@drawable/gancho"
+        android:layout_marginTop="270dp"
+        android:layout_marginLeft="770dp"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:id="@+id/gancho18"
+        android:background="@drawable/gancho"
+        android:layout_marginTop="270dp"
+        android:layout_marginLeft="800dp"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:id="@+id/gancho19"
+        android:background="@drawable/gancho"
+        android:layout_marginTop="270dp"
+        android:layout_marginLeft="970dp"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:id="@+id/gancho20"
+        android:background="@drawable/gancho"
+        android:layout_marginTop="270dp"
+        android:layout_marginLeft="1000dp"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:id="@+id/gancho21"
+        android:background="@drawable/gancho"
+        android:layout_marginTop="270dp"
+        android:layout_marginLeft="1030dp"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:id="@+id/gancho22"
+        android:background="@drawable/gancho"
+        android:layout_marginTop="270dp"
+        android:layout_marginLeft="1060dp"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:id="@+id/gancho23"
+        android:background="@drawable/gancho"
+        android:layout_marginTop="270dp"
+        android:layout_marginLeft="1090dp"/>
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:id="@+id/gancho24"
+        android:background="@drawable/gancho"
+        android:layout_marginTop="270dp"
+        android:layout_marginLeft="1120dp"/>
+
+
+
+
+    <ImageView
         android:layout_width="@dimen/shirt_width"
         android:layout_height="@dimen/shirt_height"
         android:id="@+id/item1"
@@ -302,7 +497,7 @@
     <ImageView
         android:layout_width="250px"
         android:layout_height="100px"
-        android:id="@+id/bozshoessoccer"
+        android:id="@+id/bozshoes"
         android:background="@drawable/bozshoes1"
         android:layout_marginTop="100dp"
         android:layout_marginLeft="400dp"
@@ -311,16 +506,15 @@
     <ImageView
         android:layout_width="300px"
         android:layout_height="110px"
-        android:id="@+id/bozshoesbasket"
+        android:id="@+id/bozbasketshoes"
         android:background="@drawable/bozbasketshoes1"
         android:layout_marginTop="90dp"
         android:layout_marginLeft="180dp" />
 
-
     <ImageView
         android:layout_width="250px"
         android:layout_height="250px"
-        android:id="@+id/bozsballsoccer"
+        android:id="@+id/bozsball1"
         android:background="@drawable/bozballsoccer"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="580dp"
@@ -334,16 +528,20 @@
         android:layout_marginTop="20dp"
         android:layout_marginLeft="730dp"
         />
+
     <ImageView
+
         android:layout_width="450px"
         android:layout_height="300px"
-        android:id="@+id/bozshirtsoccerm"
+        android:id="@+id/bozshirt"
         android:background="@drawable/bozshirtm1"
         android:layout_marginTop="250dp"
-        android:layout_marginLeft="100dp"
+        android:layout_marginLeft="80dp"
+
          />
 
     <ImageView
+
         android:layout_width="250px"
         android:layout_height="250px"
         android:id="@+id/bozsballfutbol"
@@ -355,26 +553,67 @@
     <ImageView
         android:layout_width="300px"
         android:layout_height="250px"
-        android:id="@+id/bozshortsoccerm"
+        android:id="@+id/bozshort"
         android:background="@drawable/bozshortm1"
         android:layout_marginTop="250dp"
-        android:layout_marginLeft="400dp" />
+        android:layout_marginLeft="430dp" />
 
     <ImageView
         android:layout_width="300px"
         android:layout_height="350px"
-        android:id="@+id/bozshirtbasketm"
+        android:id="@+id/bozbasketshirt"
         android:background="@drawable/bozbasketshirtm1"
         android:layout_marginTop="250dp"
-        android:layout_marginLeft="650dp" />
+        android:layout_marginLeft="730dp" />
 
     <ImageView
         android:layout_width="350px"
         android:layout_height="300px"
-        android:id="@+id/bozshortbasketm"
+        android:id="@+id/bozbasketshort"
         android:background="@drawable/bozbasketshortm1"
         android:layout_marginTop="250dp"
-        android:layout_marginLeft="900dp" />
+        android:layout_marginLeft="1030dp" />
+
+
+
+    <ImageView
+        android:id="@+id/emptystar1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/tile_back_star"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="180dp" />
+
+    <ImageView
+        android:id="@+id/star1"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/level_complete_star"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="180dp" />
+
+    <TextView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="="
+        android:textSize="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="180dp"
+        />
+
+    <TextView
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="0"
+        android:textSize="40dp"
+        android:id="@+id/res"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="180dp"
+        />
 
 
 </RelativeLayout>

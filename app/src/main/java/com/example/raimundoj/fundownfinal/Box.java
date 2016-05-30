@@ -16,6 +16,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Random;
@@ -25,13 +26,23 @@ public class Box extends Animaciones implements View.OnTouchListener,View.OnClic
     private static final String msg = "LogsAndroid";
     ImageButton box;
     private ImageView items[] = new ImageView[34];
+    private ImageView ganchos[] = new ImageView[34];
     private Integer[] orden = new Integer[34];
     int prevX, prevY, firtsX, firtsY;
     Random rand = new Random();
     int rep = 0;
     int hits = 0;
     Button boton;
-
+    int shirt = 0;
+    int shorts=0;
+    int shoes=0;
+    int bshirt = 0;
+    int bshorts=0;
+    int bshoes=0;
+    String ini1;
+    String ini2;
+    ImageView bozshirt,bozshort,bozshoes,bozbasketshirt,bozbasketshort,bozbasketshoes,bozball1,bozball2,bozball3;
+    TextView res;
     //Variables Sonido
     ImageView home;
     MediaPlayer bgm;
@@ -45,50 +56,56 @@ public class Box extends Animaciones implements View.OnTouchListener,View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_box);
-        items[0]=(ImageView)findViewById(R.id.item1);
-        items[1]=(ImageView)findViewById(R.id.item2);
-        items[2]=(ImageView)findViewById(R.id.item3);
-        items[3]=(ImageView)findViewById(R.id.item4);
-        items[4]=(ImageView)findViewById(R.id.item5);
-        items[5]=(ImageView)findViewById(R.id.item6);
-        items[6]=(ImageView)findViewById(R.id.item7);
-        items[7]=(ImageView)findViewById(R.id.item8);
-        items[8]=(ImageView)findViewById(R.id.item9);
-        items[9]=(ImageView)findViewById(R.id.item10);
-        items[10]=(ImageView)findViewById(R.id.item11);
-        items[11]=(ImageView)findViewById(R.id.item12);
-        items[12]=(ImageView)findViewById(R.id.item13);
-        items[13]=(ImageView)findViewById(R.id.item14);
-        items[14]=(ImageView)findViewById(R.id.item15);
-        items[15]=(ImageView)findViewById(R.id.item16);
-        items[16]=(ImageView)findViewById(R.id.item17);
-        items[17]=(ImageView)findViewById(R.id.item18);
-        items[18]=(ImageView)findViewById(R.id.item19);
-        items[19]=(ImageView)findViewById(R.id.item20);
-        items[20]=(ImageView)findViewById(R.id.item21);
-        items[21]=(ImageView)findViewById(R.id.item22);
-        items[22]=(ImageView)findViewById(R.id.item23);
-        items[23]=(ImageView)findViewById(R.id.item24);
-        items[24]=(ImageView)findViewById(R.id.item25);
-        items[25]=(ImageView)findViewById(R.id.item26);
-        items[26]=(ImageView)findViewById(R.id.item27);
-        items[27]=(ImageView)findViewById(R.id.item28);
-        items[28]=(ImageView)findViewById(R.id.item29);
-        items[29]=(ImageView)findViewById(R.id.item30);
-        items[30]=(ImageView)findViewById(R.id.item31);
-        items[31]=(ImageView)findViewById(R.id.item32);
-        items[32]=(ImageView)findViewById(R.id.item33);
-        items[33]=(ImageView)findViewById(R.id.item34);
+
+
+        bozshirt=(ImageView)findViewById(R.id.bozshirt);
+        bozshort=(ImageView)findViewById(R.id.bozshort);
+        bozshoes=(ImageView)findViewById(R.id.bozshoes);
+        bozbasketshirt=(ImageView)findViewById(R.id.bozbasketshirt);
+        bozbasketshort=(ImageView)findViewById(R.id.bozbasketshort);
+        bozbasketshoes=(ImageView)findViewById(R.id.bozbasketshoes);
+        bozball1=(ImageView)findViewById(R.id.bozsballbasket);
+        bozball2=(ImageView)findViewById(R.id.bozsball1);
+        bozball3=(ImageView)findViewById(R.id.bozsballfutbol);
+        res=(TextView)findViewById(R.id.res);
         boton=(Button)findViewById(R.id.button2);
         boton.setOnClickListener(this);
         box=(ImageButton)findViewById(R.id.box);
         box.setOnClickListener(this);
         boton.setVisibility(View.INVISIBLE);
+
+        for(int i=0;i <=23; i++){
+
+            int j =i+1;
+            ini2 ="gancho" +j;
+
+            try {
+                int resourceId = R.id.class.getField(ini2).getInt(null);
+                ganchos[i]=(ImageView)findViewById(resourceId);
+                ganchos[i].setVisibility(View.INVISIBLE);
+
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (NoSuchFieldException e) {
+                e.printStackTrace();
+            }
+
+        }
         for(int i=0;i <=33; i++){
 
-            items[i].setOnTouchListener(this);
-            items[i].setVisibility(View.INVISIBLE);
-            items[i].setEnabled(false);
+            int j =i+1;
+            ini1 ="item" +j;
+            try {
+                int resourceId = R.id.class.getField(ini1).getInt(null);
+                items[i]=(ImageView)findViewById(resourceId);
+                items[i].setOnTouchListener(this);
+                items[i].setVisibility(View.INVISIBLE);
+                items[i].setEnabled(false);
+            } catch (IllegalAccessException e) {
+                e.printStackTrace();
+            } catch (NoSuchFieldException e) {
+                e.printStackTrace();
+            }
 
         }
         for(int i=0;i <=33; i++){
@@ -313,10 +330,17 @@ public class Box extends Animaciones implements View.OnTouchListener,View.OnClic
             if (par.leftMargin < 75) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if (par.leftMargin > 480) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
-                par.topMargin = 580;
-                par.leftMargin = 150;
-                v.setEnabled(false);
                 hits++;
+                Sonidos(R.raw.star);
+                res.setText(""+hits);
+                par.topMargin = 580;
+                par.leftMargin = 150+shirt;
+                int gancho = shirt/50;
+                ganchos[gancho].setVisibility(View.VISIBLE);
+                v.setEnabled(false);
+                v.bringToFront();
+                shirt = shirt+50;
+                bozshirt.setVisibility(View.INVISIBLE);
 
             }
         }
@@ -327,10 +351,19 @@ public class Box extends Animaciones implements View.OnTouchListener,View.OnClic
             if (par.leftMargin < 660) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if (par.leftMargin > 985) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
+
+                hits++;
+                Sonidos(R.raw.star);
+                res.setText(""+hits);
                 par.topMargin = 580;
-                par.leftMargin = 800;
+                par.leftMargin = 800+shorts;
+                int gancho = (shorts/50)+7;
+                ganchos[gancho].setVisibility(View.VISIBLE);
                 v.setEnabled(false);
-                hits++;}
+                v.bringToFront();
+                shorts = shorts+50;
+                bozshort.setVisibility(View.INVISIBLE);
+                }
         }
 
         if(tipo == "basketshirt"){
@@ -340,10 +373,18 @@ public class Box extends Animaciones implements View.OnTouchListener,View.OnClic
             if (par.leftMargin < 1220) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if (par.leftMargin > 1520) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
+                hits++;
+                Sonidos(R.raw.star);
+                res.setText(""+hits);
                 par.topMargin = 580;
-                par.leftMargin = 1300;
+                par.leftMargin = 1300+bshirt;
+                int gancho = (bshirt/50)+13;
+                ganchos[gancho].setVisibility(View.VISIBLE);
                 v.setEnabled(false);
-                hits++;}
+                v.bringToFront();
+                bshirt = bshirt+50;
+                bozbasketshirt.setVisibility(View.INVISIBLE);
+                }
 
         }
         if(tipo == "basketshort"){
@@ -353,10 +394,18 @@ public class Box extends Animaciones implements View.OnTouchListener,View.OnClic
             if (par.leftMargin < 1730) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if (par.leftMargin > 2070) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
+                hits++;
+                Sonidos(R.raw.star);
+                res.setText(""+hits);
                 par.topMargin = 580;
-                par.leftMargin = 1810;
+                par.leftMargin = 1810+bshorts;
+                int gancho = (bshorts/50)+19;
+                ganchos[gancho].setVisibility(View.VISIBLE);
                 v.setEnabled(false);
-                hits++;}
+                v.bringToFront();
+                bshorts = bshorts+50;
+                bozbasketshort.setVisibility(View.INVISIBLE);
+                }
         }
         if(tipo == "basketshoes"){
 
@@ -365,10 +414,16 @@ public class Box extends Animaciones implements View.OnTouchListener,View.OnClic
             if (par.leftMargin < 280) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if (par.leftMargin > 520) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
-                par.topMargin = 120;
-                par.leftMargin = 300;
+                hits++;
+                Sonidos(R.raw.star);
+                res.setText(""+hits);
+                par.topMargin = 200;
+                par.leftMargin = 300+bshoes;
                 v.setEnabled(false);
-                hits++;}
+                v.bringToFront();
+                bshoes = bshoes+50;
+                bozbasketshoes.setVisibility(View.INVISIBLE);
+                }
         }
         if(tipo == "shoes"){
 
@@ -377,10 +432,16 @@ public class Box extends Animaciones implements View.OnTouchListener,View.OnClic
             if (par.leftMargin < 700) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if (par.leftMargin > 950) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
-                par.topMargin = 120;
-                par.leftMargin = 820;
-                v.setEnabled(false);
                 hits++;
+                Sonidos(R.raw.star);
+                res.setText(""+hits);
+                par.topMargin = 200;
+                par.leftMargin = 790+shoes;
+                v.setEnabled(false);
+                v.bringToFront();
+                shoes = shoes+50;
+                bozshoes.setVisibility(View.INVISIBLE);
+
             }
         }
 
@@ -391,10 +452,15 @@ public class Box extends Animaciones implements View.OnTouchListener,View.OnClic
             if (par.leftMargin < 1300) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if (par.leftMargin > 1450) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
+                hits++;
+                Sonidos(R.raw.star);
+                res.setText(""+hits);
                 par.topMargin = 60;
                 par.leftMargin = 1460;
                 v.setEnabled(false);
-                hits++;}
+                v.bringToFront();
+                bozball1.setVisibility(View.INVISIBLE);
+                }
         }
         if(tipo == "ball2"){
 
@@ -403,10 +469,15 @@ public class Box extends Animaciones implements View.OnTouchListener,View.OnClic
             if (par.leftMargin < 1050) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if (par.leftMargin > 1250) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
+                hits++;
+                Sonidos(R.raw.star);
+                res.setText(""+hits);
                 par.topMargin = 55;
                 par.leftMargin = 1160;
                 v.setEnabled(false);
-                hits++;}
+
+                bozball2.setVisibility(View.INVISIBLE);
+                }
         }
         if(tipo == "ball3"){
 
@@ -415,10 +486,14 @@ public class Box extends Animaciones implements View.OnTouchListener,View.OnClic
             if (par.leftMargin < 1600) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if (par.leftMargin > 1850) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
+                hits++;
+                Sonidos(R.raw.star);
+                res.setText(""+hits);
                 par.topMargin = 55;
                 par.leftMargin = 1760;
                 v.setEnabled(false);
-                hits++;}
+                bozball3.setVisibility(View.INVISIBLE);
+                }
         }
 
         if(hits == 34){
@@ -435,6 +510,19 @@ public class Box extends Animaciones implements View.OnTouchListener,View.OnClic
 
         switch (v.getId()){
 
+            case R.id.sonido:
+
+                if(toggle){
+                    bgm.pause();
+                    toggle = false;
+                    sonido.setImageBitmap(soundOff);
+                }else{
+                    bgm.start();
+                    toggle = true;
+                    sonido.setImageBitmap(soundOn);
+                }
+
+                break;
 
             case R.id.home:
 
