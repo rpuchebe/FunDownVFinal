@@ -46,6 +46,7 @@ public class Animaciones extends AppCompatActivity {
 
 
 
+
     private boolean mSoundState = false;
     SharedPreferences appPreferences;
 
@@ -250,6 +251,20 @@ public class Animaciones extends AppCompatActivity {
                 again.setAlpha(0f);
                 animateStar(again, 600);
                 back.setVisibility(View.VISIBLE);
+                back.setAlpha(0f);
+                animateStar(back, 600);
+                break;
+            case 34:
+                popup.setVisibility(View.VISIBLE);
+                popup.bringToFront();
+                popup.setAlpha(0f);
+                animateStar(popup, 500);
+                again.setVisibility(View.VISIBLE);
+                again.bringToFront();
+                again.setAlpha(0f);
+                animateStar(again, 600);
+                back.setVisibility(View.VISIBLE);
+                back.bringToFront();
                 back.setAlpha(0f);
                 animateStar(back, 600);
                 break;

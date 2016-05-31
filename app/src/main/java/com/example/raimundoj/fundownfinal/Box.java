@@ -26,7 +26,7 @@ public class Box extends Animaciones implements View.OnTouchListener,View.OnClic
     private static final String msg = "LogsAndroid";
     ImageButton box;
     private ImageView items[] = new ImageView[34];
-    private ImageView ganchos[] = new ImageView[34];
+    private ImageView ganchos[] = new ImageView[24];
     private Integer[] orden = new Integer[34];
     int prevX, prevY, firtsX, firtsY;
     Random rand = new Random();
@@ -72,7 +72,15 @@ public class Box extends Animaciones implements View.OnTouchListener,View.OnClic
         boton.setOnClickListener(this);
         box=(ImageButton)findViewById(R.id.box);
         box.setOnClickListener(this);
+        again.setOnClickListener(this);
+        back.setOnClickListener(this);
+        again=(ImageView)findViewById(R.id.again);
+        back=(ImageView)findViewById(R.id.back);
+        popup=(ImageView)findViewById(R.id.popup);
         boton.setVisibility(View.INVISIBLE);
+        again.setVisibility(View.GONE);
+        back.setVisibility(View.GONE);
+        popup.setVisibility(View.GONE);
 
         for(int i=0;i <=23; i++){
 
@@ -143,7 +151,7 @@ public class Box extends Animaciones implements View.OnTouchListener,View.OnClic
         RelativeLayout.LayoutParams par1 = (RelativeLayout.LayoutParams) items[orden[0+rep]].getLayoutParams();
         items[orden[0+rep]].setVisibility(View.VISIBLE);
         items[orden[0+rep]].setEnabled(true);
-
+        Log.d(msg,"rep:" + (rep+0) );
         if(orden[0+rep]>19){par1.leftMargin=850;}
         else{par1.leftMargin=800;}
 
@@ -154,6 +162,7 @@ public class Box extends Animaciones implements View.OnTouchListener,View.OnClic
         RelativeLayout.LayoutParams par2 = (RelativeLayout.LayoutParams) items[orden[1+rep]].getLayoutParams();
         items[orden[1+rep]].setVisibility(View.VISIBLE);
         items[orden[1+rep]].setEnabled(true);
+        Log.d(msg,"rep:" + (rep+1) );
         if(orden[1+rep]>19){
 
             par2.leftMargin=1200;
@@ -170,6 +179,7 @@ public class Box extends Animaciones implements View.OnTouchListener,View.OnClic
         RelativeLayout.LayoutParams par3 = (RelativeLayout.LayoutParams) items[orden[2+rep]].getLayoutParams();
         items[orden[2+rep]].setVisibility(View.VISIBLE);
         items[orden[2+rep]].setEnabled(true);
+
         if(orden[2+rep]>19){
 
             par3.leftMargin=1550;
@@ -198,7 +208,8 @@ public class Box extends Animaciones implements View.OnTouchListener,View.OnClic
 
         par4.topMargin=1150;
         items[orden[3+rep]].setLayoutParams(par4);
-        if(rep!=5){
+        Log.d(msg,"rep:" + rep );
+        if(rep!=30){
 
             RelativeLayout.LayoutParams par5 = (RelativeLayout.LayoutParams) items[orden[4+rep]].getLayoutParams();
             items[orden[4 + rep]].setVisibility(View.VISIBLE);
@@ -213,10 +224,11 @@ public class Box extends Animaciones implements View.OnTouchListener,View.OnClic
 
             }
 
-
             par5.topMargin=1150;
 
             items[orden[4+rep]].setLayoutParams(par5);
+            rep=rep+5;
+
 
         }
 
@@ -319,24 +331,23 @@ public class Box extends Animaciones implements View.OnTouchListener,View.OnClic
 
     private RelativeLayout.LayoutParams Verificar(View v, int prevX, int prevY, int firtsX, int firtsY, int temp1, RelativeLayout.LayoutParams par, String tipo){
 
-
-
         Log.d(msg,"Item:"+ tipo + "____Top:" + par.topMargin + "____Left :"+ par.leftMargin);
 
         if(tipo == "shirt"){
 
             if (par.topMargin < 350) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if (par.topMargin > 700) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin < 75) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin > 480) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin < 70) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin > 500) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
                 hits++;
                 Sonidos(R.raw.star);
                 res.setText(""+hits);
-                par.topMargin = 580;
+                par.topMargin = 580+(shirt/5);
                 par.leftMargin = 150+shirt;
                 int gancho = shirt/50;
                 ganchos[gancho].setVisibility(View.VISIBLE);
+                ganchos[gancho].bringToFront();
                 v.setEnabled(false);
                 v.bringToFront();
                 shirt = shirt+50;
@@ -349,16 +360,17 @@ public class Box extends Animaciones implements View.OnTouchListener,View.OnClic
             if (par.topMargin < 350) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if (par.topMargin > 700) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if (par.leftMargin < 660) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin > 985) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin > 1105) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
 
                 hits++;
                 Sonidos(R.raw.star);
                 res.setText(""+hits);
-                par.topMargin = 580;
-                par.leftMargin = 800+shorts;
-                int gancho = (shorts/50)+7;
+                par.topMargin = 620+(shorts/5);
+                par.leftMargin = 850+shorts;
+                int gancho = (shorts/50)+6;
                 ganchos[gancho].setVisibility(View.VISIBLE);
+                ganchos[gancho].bringToFront();
                 v.setEnabled(false);
                 v.bringToFront();
                 shorts = shorts+50;
@@ -370,16 +382,17 @@ public class Box extends Animaciones implements View.OnTouchListener,View.OnClic
 
             if (par.topMargin < 350) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if (par.topMargin > 700) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin < 1220) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin < 1150) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if (par.leftMargin > 1520) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
                 hits++;
                 Sonidos(R.raw.star);
                 res.setText(""+hits);
-                par.topMargin = 580;
-                par.leftMargin = 1300+bshirt;
-                int gancho = (bshirt/50)+13;
+                par.topMargin = 580+(bshirt/5);
+                par.leftMargin = 1380+bshirt;
+                int gancho = (bshirt/50)+12;
                 ganchos[gancho].setVisibility(View.VISIBLE);
+                ganchos[gancho].bringToFront();
                 v.setEnabled(false);
                 v.bringToFront();
                 bshirt = bshirt+50;
@@ -392,15 +405,16 @@ public class Box extends Animaciones implements View.OnTouchListener,View.OnClic
             if (par.topMargin < 350) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if (par.topMargin > 700) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if (par.leftMargin < 1730) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin > 2070) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin > 2170) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
                 hits++;
                 Sonidos(R.raw.star);
                 res.setText(""+hits);
-                par.topMargin = 580;
-                par.leftMargin = 1810+bshorts;
-                int gancho = (bshorts/50)+19;
+                par.topMargin = 613+(bshorts/5);
+                par.leftMargin = 1950+bshorts;
+                int gancho = (bshorts/50)+18;
                 ganchos[gancho].setVisibility(View.VISIBLE);
+                ganchos[gancho].bringToFront();
                 v.setEnabled(false);
                 v.bringToFront();
                 bshorts = bshorts+50;
@@ -410,15 +424,15 @@ public class Box extends Animaciones implements View.OnTouchListener,View.OnClic
         if(tipo == "basketshoes"){
 
             if (par.topMargin < 100) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.topMargin > 250) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin < 280) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin > 520) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin > 280) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin < 250) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin > 500) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
                 hits++;
                 Sonidos(R.raw.star);
                 res.setText(""+hits);
                 par.topMargin = 200;
-                par.leftMargin = 300+bshoes;
+                par.leftMargin = 280+bshoes;
                 v.setEnabled(false);
                 v.bringToFront();
                 bshoes = bshoes+50;
@@ -428,9 +442,9 @@ public class Box extends Animaciones implements View.OnTouchListener,View.OnClic
         if(tipo == "shoes"){
 
             if (par.topMargin < 100) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.topMargin > 250) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin < 700) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin > 950) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.topMargin > 280) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin < 630) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin > 900) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
                 hits++;
                 Sonidos(R.raw.star);
@@ -450,13 +464,13 @@ public class Box extends Animaciones implements View.OnTouchListener,View.OnClic
             if (par.topMargin < 0) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if (par.topMargin > 160) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if (par.leftMargin < 1300) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin > 1450) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin > 1550) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
                 hits++;
                 Sonidos(R.raw.star);
                 res.setText(""+hits);
                 par.topMargin = 60;
-                par.leftMargin = 1460;
+                par.leftMargin = 1490;
                 v.setEnabled(false);
                 v.bringToFront();
                 bozball1.setVisibility(View.INVISIBLE);
@@ -466,16 +480,15 @@ public class Box extends Animaciones implements View.OnTouchListener,View.OnClic
 
             if (par.topMargin < 0) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if (par.topMargin > 160) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
-            if (par.leftMargin < 1050) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
+            if (par.leftMargin < 1000) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if (par.leftMargin > 1250) {par.topMargin = firtsX;par.leftMargin = firtsY;temp1=1;}
             if(temp1==0){
                 hits++;
                 Sonidos(R.raw.star);
                 res.setText(""+hits);
                 par.topMargin = 55;
-                par.leftMargin = 1160;
+                par.leftMargin = 1180;
                 v.setEnabled(false);
-
                 bozball2.setVisibility(View.INVISIBLE);
                 }
         }
@@ -496,11 +509,14 @@ public class Box extends Animaciones implements View.OnTouchListener,View.OnClic
                 }
         }
 
+        if((hits%5)==0){
+
+            box.setEnabled(true);
+        }
+
         if(hits == 34){
 
-            Toast.makeText(getApplicationContext(), "Felicitaciones Ganaste !",
-                    Toast.LENGTH_LONG).show();
-            boton.setVisibility(View.VISIBLE);
+            gameWon(34);
         }
         return par;
     }
@@ -533,15 +549,22 @@ public class Box extends Animaciones implements View.OnTouchListener,View.OnClic
 
             case R.id.box:
 
-                rep=rep+5;
+
                 SetImagenes();
+                box.setEnabled(false);
 
 
                 break;
 
-            case R.id.button2:
+            case R.id.again:
 
                 intent = new Intent(Box.this,Box.class);
+                startActivity(intent);
+                break;
+
+            case R.id.back:
+
+                intent = new Intent(Box.this, Deporte.class);
                 startActivity(intent);
 
                 break;
