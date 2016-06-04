@@ -2,6 +2,7 @@ package com.example.raimundoj.fundownfinal;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -19,6 +20,7 @@ public class MainActivity extends Animaciones implements View.OnClickListener {
     ImageView mStartButtonLights1;
     ImageView mStartButtonLights2;
     ImageView mStartButtonLights3;
+    boolean resolution;
 
 
     @Override
@@ -26,7 +28,7 @@ public class MainActivity extends Animaciones implements View.OnClickListener {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        GetResolucion(resolution);
         //ImageButton
         avatar1 =(ImageButton)findViewById(R.id.avatar1);
         avatar2 =(ImageButton)findViewById(R.id.avatar2);
@@ -57,6 +59,8 @@ public class MainActivity extends Animaciones implements View.OnClickListener {
         startLightsAnimation(mStartButtonLights2);
         startLightsAnimation(mStartButtonLights3);
 
+
+
     }
 
     @Override
@@ -85,7 +89,7 @@ public class MainActivity extends Animaciones implements View.OnClickListener {
 
             case R.id.avatar1:
 
-                Intent intent = new Intent(MainActivity.this, Deporte.class);
+                Intent intent = new Intent(MainActivity.this, Deporte_Main.class);
                 int avatar = 1;
                 intent.putExtra("Avatar", avatar);
                 startActivity(intent);
@@ -94,7 +98,7 @@ public class MainActivity extends Animaciones implements View.OnClickListener {
 
             case R.id.avatar2:
 
-                intent = new Intent(MainActivity.this, Deporte.class);
+                intent = new Intent(MainActivity.this, Deporte_Main.class);
                 avatar = 2;
                 intent.putExtra("Avatar", avatar);
                 startActivity(intent);
@@ -103,7 +107,7 @@ public class MainActivity extends Animaciones implements View.OnClickListener {
 
             case R.id.avatar3:
 
-                intent = new Intent(MainActivity.this, Deporte.class);
+                intent = new Intent(MainActivity.this, Deporte_Main.class);
                 avatar = 3;
                 intent.putExtra("Avatar", avatar);
                 startActivity(intent);

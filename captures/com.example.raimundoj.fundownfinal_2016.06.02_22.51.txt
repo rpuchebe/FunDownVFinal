@@ -1,0 +1,31 @@
+TASK com.example.raimundoj.fundownfinal id=545
+  ACTIVITY com.example.raimundoj.fundownfinal/.MainActivity 27f5f32e pid=20865
+    Local FragmentActivity 1ea7a40a State:
+      mCreated=truemResumed=true mStopped=false mReallyStopped=false
+      mLoadersStarted=true
+    FragmentManager misc state:
+      mHost=android.support.v4.app.FragmentActivity$HostCallbacks@b18147b
+      mContainer=android.support.v4.app.FragmentActivity$HostCallbacks@b18147b
+      mCurState=5 mStateSaved=false mDestroyed=false
+    View Hierarchy:
+      com.android.internal.policy.impl.PhoneWindow$DecorView{21a06298 V.E..... ... 0,0-2560,1600}
+        android.widget.LinearLayout{8e47af1 V.E..... ... 0,0-2560,1504}
+          android.view.ViewStub{2e23f6d6 G.E..... ... 0,0-0,0 #102036e}
+          android.widget.FrameLayout{1a097d57 V.E..... ... 0,0-2560,1504}
+            android.support.v7.widget.FitWindowsLinearLayout{2851044 V.E..... ... 0,0-2560,1504 #7f0d0055 app:id/action_bar_root}
+              android.support.v7.widget.ViewStubCompat{3634d52d G.E..... ... 0,0-0,0 #7f0d0056 app:id/action_mode_bar_stub}
+              android.support.v7.widget.ContentFrameLayout{3b40aa62 V.E..... ... 0,0-2560,1504 #1020002 android:id/content}
+                android.support.design.widget.CoordinatorLayout{183e97f3 V.ED.... ... 0,0-2560,1504 #7f0d006d app:id/sw720}
+                  android.support.design.widget.AppBarLayout{1de4ecb0 V.E..... ... 0,50-2560,50}
+                  android.widget.RelativeLayout{3ab69729 V.E..... ... 0,50-2560,1504}
+                    android.support.v7.widget.AppCompatTextView{34830aae V.ED.... ... 1199,708-1361,746 #7f0d00bf app:id/textView}
+                    android.support.v7.widget.AppCompatImageView{39a0c04f V.ED.... ... 880,622-1680,1422 #7f0d00bc app:id/start_game_button_lights1}
+                    android.support.v7.widget.AppCompatImageButton{102423dc VFED..C. ... 1080,832-1480,1232 #7f0d00c1 app:id/avatar2}
+                    android.support.v7.widget.AppCompatImageView{3a787ce5 V.ED.... ... 128,622-928,1422 #7f0d00bd app:id/start_game_button_lights2}
+                    android.support.v7.widget.AppCompatImageButton{197923ba VFED..C. ... 328,832-728,1232 #7f0d00c2 app:id/avatar1}
+                    android.support.v7.widget.AppCompatImageView{1d53126b V.ED.... ... 1632,622-2432,1422 #7f0d00c3 app:id/start_game_button_lights3}
+                    android.support.v7.widget.AppCompatImageButton{35bda1c8 VFED..C. ... 1828,832-2228,1232 #7f0d00c4 app:id/avatar3}
+                    android.support.v7.widget.AppCompatImageView{11b90261 V.ED.... ... 428,792-588,862 #7f0d00c5 app:id/tooltip1}
+                    android.support.v7.widget.AppCompatImageView{2285c186 V.ED.... ... 1388,792-1548,862 #7f0d00c6 app:id/tooltip2}
+                    android.support.v7.widget.AppCompatImageView{278e6a47 V.ED.... ... 2288,792-2432,862 #7f0d00c7 app:id/tooltip3}
+        android.view.View{35ef1274 V.ED.... ... 0,1504-2560,1600 #1020030 android:id/navigationBarBackground}

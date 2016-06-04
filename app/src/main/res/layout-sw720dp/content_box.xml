@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.raimundoj.fundownfinal.Box"
+    tools:context="com.example.raimundoj.fundownfinal.Box_Main"
     tools:showIn="@layout/activity_box">
 
     <ImageView
@@ -13,16 +13,7 @@
         android:id="@+id/fondo"
         android:background="@drawable/fondo61"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Volver a Jugar"
-        android:id="@+id/button2"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20dp"
-        android:layout_centerHorizontal="true" />
+         />
 
     <ImageButton
         android:layout_width="270dp"
@@ -633,5 +624,39 @@
         android:layout_marginLeft="650dp"
         />
 
+    <ImageView
+        android:layout_width="@dimen/shirt_width"
+        android:layout_height="@dimen/shirt_height"
+        android:id="@+id/ejemplo1"
+        android:background="@drawable/shirtw3"
+        android:layout_marginTop="570dp"
+        android:layout_marginLeft="350dp"
+        />
+
+    <ImageView
+        android:layout_width="@dimen/short_width"
+        android:layout_height="@dimen/short_height"
+        android:id="@+id/ejemplo2"
+        android:background="@drawable/shortm2"
+        android:layout_marginTop="600dp"
+        android:layout_marginLeft="600dp"
+        />
+
+    <ImageView
+        android:layout_width="@dimen/shirt_width"
+        android:layout_height="@dimen/shirt_height"
+        android:id="@+id/ejemplo3"
+        android:background="@drawable/shirtw2"
+        android:layout_marginTop="570dp"
+        android:layout_marginLeft="750dp"
+        />
+    <ImageView
+        android:layout_width="@dimen/shirt_width"
+        android:layout_height="@dimen/shirt_height"
+        android:id="@+id/mano"
+        android:background="@drawable/shirtw3"
+        android:layout_marginTop="570dp"
+        android:layout_marginLeft="350dp"
+        />
 
 </RelativeLayout>

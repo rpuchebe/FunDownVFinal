@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.raimundoj.fundownfinal.Deporte"
+    tools:showIn="@layout/activity_deporte">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fondo"
+        android:background="@drawable/fondo6"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true" />
+
+    <ImageView
+        android:id="@+id/start_game_button_lights1"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:layout_marginLeft="480dp"
+        android:layout_marginTop="115dp"
+        android:src="@drawable/button_start_lights"/>
+
+    <ImageButton
+        android:id="@+id/maniqui"
+        android:layout_width="74dp"
+        android:layout_height="90dp"
+        android:background="@drawable/btncamisa"
+        android:layout_below="@+id/sonido"
+        android:layout_marginLeft="520dp"
+        android:layout_marginTop="80dp" />
+
+
+    <ImageView
+        android:id="@+id/start_game_button_lights2"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:scaleType="centerCrop"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="300dp"
+        android:src="@drawable/button_start_lights"/>
+
+    <ImageButton
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:id="@+id/box"
+        android:background="@drawable/box"
+        android:clickable="false"
+        android:layout_marginLeft="155dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="35dp"
+         />
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/home"
+        android:background="@drawable/btnhome"
+        android:layout_marginTop="10px"
+        android:layout_marginLeft="100px"
+        />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/sonido"
+        android:layout_marginRight="110dp"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/btnsonidoon"
+        android:layout_alignTop="@+id/home"
+        />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:id="@+id/info"
+        android:background="@drawable/btninfo"
+        android:layout_marginRight="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/sonido"
+         />
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:id="@+id/avatar"
+        android:background="@drawable/avatar1"
+        android:layout_marginTop="55dp"
+        android:layout_marginRight="50px"
+        android:layout_alignParentRight="true"
+
+        />
+
+</RelativeLayout>

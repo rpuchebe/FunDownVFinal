@@ -14,6 +14,7 @@ import android.graphics.BitmapFactory;
 import android.media.MediaPlayer;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,7 +34,7 @@ import com.daimajia.androidanimations.library.YoYo;
 
 public class Animaciones extends AppCompatActivity {
 
-
+    private static final String msg = "LogsAndroid";
     //Puntaje
     int hits = 0;
 
@@ -44,108 +45,8 @@ public class Animaciones extends AppCompatActivity {
     ImageView again;
     ImageView popup;
 
-
-
-
     private boolean mSoundState = false;
     SharedPreferences appPreferences;
-
-    public void onClickInfo(View view) {
-        General.showInfo(this);
-    }
-
-    public void addButtons(Context context, RelativeLayout layout){
-        Log.d(General.TAG,"addButtons");
-        addSoundButton(context, layout);
-        addInfodButton(context, layout);
-        addHomedButton(context,layout);
-    }
-
-    private void addSoundButton(final Context context, RelativeLayout layout) {
-        final ImageView ivSonido = new ImageView(context);
-        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, RelativeLayout.TRUE);
-        params.addRule(RelativeLayout.ALIGN_PARENT_END, RelativeLayout.TRUE);
-        params.addRule(RelativeLayout.ALIGN_PARENT_TOP, RelativeLayout.TRUE);
-        params.rightMargin = dpToPixel(context,20);;
-        params.topMargin = dpToPixel(context,20);;
-        params.width = dpToPixel(context,60);
-        params.height = dpToPixel(context,60);
-
-        appPreferences = PreferenceManager.getDefaultSharedPreferences(this);
-        boolean isSoundActive = appPreferences.getBoolean("isSoundActive", false);
-        if (isSoundActive) {
-            ivSonido.setImageResource(R.drawable.btnsonidoon);
-        } else {
-            ivSonido.setImageResource(R.drawable.btnsonidoff);
-        }
-        Log.d(General.TAG,"Getting  sound button "+isSoundActive);
-        ivSonido.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                appPreferences = PreferenceManager.getDefaultSharedPreferences(context);
-                boolean isSoundActive = appPreferences.getBoolean("isSoundActive", false);
-                if (isSoundActive){
-                    ivSonido.setImageResource(R.drawable.btnsonidoff);
-                } else {
-                    ivSonido.setImageResource(R.drawable.btnsonidoon);
-                }
-                isSoundActive = !isSoundActive;
-                Log.d(General.TAG,"Changing sound button to "+isSoundActive);
-                SharedPreferences.Editor editor = appPreferences.edit();
-                editor.putBoolean("isSoundActive", isSoundActive);
-                editor.commit();
-
-                General.manageBackgroundMusic(isSoundActive);
-            }
-        });
-        layout.addView(ivSonido, params);
-    }
-
-    private void addInfodButton(final Context context, RelativeLayout layout) {
-        ImageView ivSonido = new ImageView(context);
-        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, RelativeLayout.TRUE);
-        params.addRule(RelativeLayout.ALIGN_PARENT_END, RelativeLayout.TRUE);
-        params.addRule(RelativeLayout.ALIGN_PARENT_TOP, RelativeLayout.TRUE);
-
-        params.rightMargin = dpToPixel(context,100);
-        params.topMargin = dpToPixel(context,20);
-        params.width = dpToPixel(context,60);
-        params.height = dpToPixel(context,60);
-        ivSonido.setImageResource(R.drawable.btninfo);
-        ivSonido.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                General.showInfo((Activity) context);
-            }
-        });
-        layout.addView(ivSonido, params);
-    }
-
-    private void addHomedButton(final Context context, RelativeLayout layout) {
-        ImageView ivSonido = new ImageView(context);
-        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
-                ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        params.addRule(RelativeLayout.ALIGN_PARENT_LEFT, RelativeLayout.TRUE);
-        params.addRule(RelativeLayout.ALIGN_PARENT_START, RelativeLayout.TRUE);
-        params.addRule(RelativeLayout.ALIGN_PARENT_TOP, RelativeLayout.TRUE);
-
-        params.leftMargin = dpToPixel(context,20);
-        params.topMargin = dpToPixel(context,20);
-        params.width = dpToPixel(context,60);
-        params.height = dpToPixel(context,60);
-        ivSonido.setImageResource(R.drawable.btnhome);
-        ivSonido.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                General.showInfo((Activity) context);
-            }
-        });
-        layout.addView(ivSonido, params);
-    }
 
     private int dpToPixel(Context context,int dp){
         final float scale = context.getResources().getDisplayMetrics().density;
@@ -272,7 +173,7 @@ public class Animaciones extends AppCompatActivity {
 
     }
 
-    private void animateStar(final View view, int delay) {
+    public void animateStar(final View view, int delay) {
         ObjectAnimator alpha = ObjectAnimator.ofFloat(view, "alpha", 0, 1f);
         alpha.setDuration(100);
         ObjectAnimator scaleX = ObjectAnimator.ofFloat(view, "scaleX", 0, 1f);
@@ -284,7 +185,6 @@ public class Animaciones extends AppCompatActivity {
         animatorSet.setDuration(600);
         view.setLayerType(View.LAYER_TYPE_HARDWARE, null);
         animatorSet.start();
-
 
     }
 
@@ -303,6 +203,44 @@ public class Animaciones extends AppCompatActivity {
                 mp.start();
 
         }
+
+    public boolean GetResolucion(boolean resolution){
+
+
+
+        DisplayMetrics metrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(metrics);
+
+        int widthPixels = metrics.widthPixels;
+        int heightPixels = metrics.heightPixels;
+
+        Log.d(msg,"---------------------Resolucion nada");
+
+        float widthDpi = metrics.xdpi;
+        float heightDpi = metrics.ydpi;
+        float widthInches = widthPixels/widthDpi;
+        float heightInches = heightPixels/heightDpi;
+        //The size of the diagonal in inches is equal to the square root of the height in inches squared plus the width in inches squared.
+        double diagonalInches = Math.sqrt(
+                (widthInches * widthInches)
+                        + (heightInches * heightInches));
+        Log.d(msg,"Diagonal" + diagonalInches);
+        if (diagonalInches > 9.9) {
+            //Device is a 10" tablet
+            Log.d(msg,"---------------------Resolucion2 10");
+            resolution=false;
+        }
+        else if (diagonalInches > 6.9) {
+            //Device is a 7" tablet
+            resolution=true;
+            Log.d(msg,"---------------------Resolucion2 7");
+        }
+
+        return resolution;
+
+
+    }
+
 
     }
 

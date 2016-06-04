@@ -20,17 +20,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Deporte"
+            android:name=".Deporte_Main"
             android:label="@string/title_activity_deporte"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Box"
+            android:name=".Box_Main"
             android:label="@string/title_activity_box"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Maniqui"
+            android:name=".Maniqui_Main"
             android:label="@string/title_activity_maniqui"
             android:screenOrientation="landscape"
             android:theme="@style/AppTheme.NoActionBar"></activity>

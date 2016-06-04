@@ -79,7 +79,7 @@
         jumboMode="true"
         optimize="false"
         revision="23.0.2"
-        sha1="cdbeaa2fa3a8aae914839aa7eb6c9659760fb477">
+        sha1="e3571e3792c8c75aa6c8d317923190c85721fc93">
         <dex dex="C:\Users\RaimundoJ\Documents\GitHub\FunDownVFinal\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_9b037343d694608c34036f0cc38d75b99dee5f48\classes.dex" />
     </item>
     <item
@@ -133,7 +133,7 @@
         jumboMode="true"
         optimize="false"
         revision="23.0.2"
-        sha1="77e99356a4129407d95a38ac5b599477de30e03e">
+        sha1="f8adfd14aae0492c011cb54d165d2243d632d40c">
         <dex dex="C:\Users\RaimundoJ\Documents\GitHub\FunDownVFinal\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_8a1f900c8fc23f482548ac125592f21631bbb59f\classes.dex" />
     </item>
 

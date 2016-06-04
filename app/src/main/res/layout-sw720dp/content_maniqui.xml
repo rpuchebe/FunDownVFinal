@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.raimundoj.fundownfinal.Maniqui"
+    tools:context="com.example.raimundoj.fundownfinal.Maniqui_Main"
     tools:showIn="@layout/activity_maniqui">
 
     <ImageView
@@ -14,7 +14,7 @@
         android:id="@+id/fondo"
         android:background="@drawable/fondo62"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" />
+         />
 
     <ImageView
         android:id="@+id/pedestal"
